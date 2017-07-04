@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="{% static 'js/pace-theme-center-radar.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/pace.min.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/nprogress.js' %}"></script>
+{% block main_content %}
+    <div id="qradar_offenses">
+    <h2> Loading ... </h2>
+    <img src="{% static 'images/giphy_loading.gif' %}" height="80" width="80"/>
+    </div>
+
+<script>
+$(document).ready(function() {
+
+  var xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("qradar_offenses").innerHTML =
+      this.responseText;
+    }
+  };
+
+  xhttp.open("GET", "/qo", true);
+  xhttp.send();
+
+
+});
+</script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="{% static 'js/datatables/js/jquery.dataTables.js' %}"></script>
+{% endblock %}

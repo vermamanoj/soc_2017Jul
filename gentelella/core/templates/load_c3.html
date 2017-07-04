@@ -1,0 +1,17 @@
+{% load static %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<body id="body">
+<h1> Hello </h1>
+<div id="a1"> Hello </div>
+</body>
+
+<script>
+$(document).ready(function(){
+   {
+        document.getElementById("a1").innerHTML = 'abcd';
+
+        document.getElementById("body").innerHTML = '<object type="text/html" data="/dashboard/c3/" ></object>';
+    }
+});
+
+</script>

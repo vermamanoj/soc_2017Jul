@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+<script>
+        NProgress.start();
+</script>
+
+{% block main_content %}
+<link href="{% static 'css/c3/c3.css' %}" rel="stylesheet">
+<!-- Load d3.js and c3.js -->
+<script src="{% static 'js/d3/d3v3.min.js'%}" charset="utf-8"></script>
+<script src="{% static 'js/c3/c3.min.js'%}"></script>
+<h3 class="h3"> Executive summary </h3>
+<div class="container-fluid">
+     <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-default" style="height:350px;width:400px;">
+                <div class="panel-heading"> Vulnerability status</div>
+                    <div class="panel-body ">
+                        <div id="chart1">
+                        <script>
+                            var chart1 = c3.generate({
+                            bindto: '#chart1',
+                            data: {
+                                x: 'x',
+
+                                columns: [
+                                    ['x', '2013-01-01', '2013-02-01', '2013-03-01', '2013-04-01', '2013-05-01', '2013-06-01'],
+
+                                    ['High', 3, 20, 10, 40, 15, 25],
+                                    ['Medium', 30, 200, 100, 400, 150, 250],
+                                    ['Low', 130, 340, 200, 500, 250, 350]
+                                ],
+                                type: 'area-spline',
+                            },
+                            axis: {
+                                x: {
+                                    type: 'timeseries',
+                                    tick: {
+                                        format: '%Y-%d-%m'
+                                    }
+                                }
+                            }
+                        });
+                        </script>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default" style="height:350px;width:400px;">
+                <div class="panel-heading"> Traffic by event source</div>
+                    <div class="panel-body ">
+                        <div id="chart2">
+                            <script>
+                                var chart = c3.generate({
+                                bindto: '#chart2',
+                                    data: {
+                                  columns: [
+                                    ['Firewall', 300, 250, 290, 400, 250, 280],
+                                    ['Active Directory', 50, 20, 10, 40, 15, 25],
+                                      ['Linux servers', 91, 30, 45, 50, 60, 80],
+                                      ['Routers', 300, 240, 310, 210, 100, 200],
+                                      ['Web proxy', 500, 520, 610, 540, 715, 625],
+
+                                  ],
+                                        type: 'spline',
+                                  axes: {
+                                    data2: 'y2'
+                                  },
+                                  types: {
+                                    'data2': 'bar' // ADD
+                                  }
+                                },
+                                axis: {
+                                  y: {
+                                    label: {
+                                      text: 'Events/second',
+                                      position: 'outer-middle'
+                                    }
+                                  },
+                                  y2: {
+                                    show: true,
+                                    label: {
+                                      text: 'Bytes/second',
+                                      position: 'outer-middle'
+                                    }
+                                  }
+                                }
+                            });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default" style="height:350px;width:400px;">
+                <div class="panel-heading"> QRadar Offense Summary</div>
+                    <div class="panel-body ">
+                        <div id="chart3">
+                            {{ qradar_offense }}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default" style="height:350px;width:400px;">
+                <div class="panel-heading"> Plotly graph</div>
+                    <div class="panel-body ">
+                        <div id="chart4"></div>
+                    </div>
+                </div>
+            </div>
+     </div>
+</div>
+<script>
+    var data1= {{ data1| safe }};
+    var convertedData = [];
+        data1.forEach(function(item){
+        convertedData.push([item.key, item.doc_count]);
+    });
+    var chart5 = c3.generate({
+        bindto: '#chart5',
+        data: {
+            columns: convertedData,
+            type: 'donut',
+            onclick: function(e) { alert(e.value); }
+        }
+    });
+</script>
+<script>
+    var data2= {{ data2| safe }};
+
+    var chart4 = c3.generate({
+        bindto: '#chart4',
+        data: {
+            json: data2,
+            keys : {},
+
+        }
+    });
+</script>
+
+    <script>
+    var data3= {{ qradar_offense| safe }};
+
+    var chart3= c3.generate({
+        bindto: '#chart3',
+        data: {
+        json: data3,
+        type: 'bar'
+
+    }
+    });
+</script>
+
+{% endblock %}

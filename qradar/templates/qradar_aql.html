@@ -1,0 +1,100 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="{% static 'js/pace-theme-center-radar.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/pace.min.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/nprogress.js' %}"></script>
+{% block main_content %}
+    {% if Error %}
+        <h2 class="h2"> {{ Error }}</h2>
+    {% else %}
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    <h2>Search QRadar using
+        <a href="https://www.ibm.com/support/knowledgecenter/SS42VS_7.2.8/com.ibm.qradar.doc/c_aql_intro.html">
+            AQL query </a></h2>
+    <div class="x_panel">
+                  <div class="x_title">
+                      <h2>Enter AQL </h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form action="/qradar/aql_query/" method="post" id="qradar_offense_query" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                        {% csrf_token %}
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="query">AQL Query <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="aql_query" name="aql_query" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button type="submit" class="btn btn-primary">Cancel</button>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+ {% if error %}
+        <h2 class="h2"> {{ error }}</h2>
+ {% endif %}
+{% if success %}
+    //result in chart format
+    <div id="chart_container">
+    <script src="{% static 'js/d3/d3v3.min.js'%}" charset="utf-8"></script>
+    <script src="{% static 'js/c3/c3.min.js'%}"></script>
+         <link href="{% static 'css/c3/c3.css' %}" rel="stylesheet">
+
+    <div id="chart1">
+        <!-- Load d3.js and c3.js -->
+
+        <script>
+            var data = {{ success | safe }}
+            var chart = c3.generate({
+                bindto: '#chart1',
+                data: {
+                json: data,
+                type: 'area-spline',
+                keys: {
+                   x: 'sourceip', // it's possible to specify 'x' when category axis
+                   value: ['total events', 'unique_destinations'],
+                }
+              },
+              axis: {
+                x: {
+                   type: 'category'
+                }
+              }
+            });
+        </script>
+        </div>
+    </div>
+    //result in table format
+
+    <table><tr>
+    {% for x in success %}
+    {% for k,v in x.items %}
+        <td>{{ v }}</td>
+
+    {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+
+    //result in raw format
+    <h2> {{ success }}</h2>
+    {% endif %}
+
+
+{% endblock %}

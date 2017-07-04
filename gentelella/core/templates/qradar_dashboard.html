@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main_content %}
+<link href="{% static 'css/c3/c3.css' %}" rel="stylesheet">
+<!-- Load d3.js and c3.js -->
+<script src="{% static 'js/d3/d3v3.min.js'%}" charset="utf-8"></script>
+<script src="{% static 'js/c3/c3.min.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+<h3 class="h3"> Executive summary </h3>
+<div class="container-fluid">
+     <div class="row">
+
+        <div class="col-sm-4">
+            <div class="panel panel-default" style="height:350px;width:400px;">
+                <div class="panel-heading"> QRadar Offense Summary</div>
+                    <div class="panel-body ">
+                        <div id="chart3">
+                            c3_dashboard.html
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default" style="height:350px;width:400px;">
+                <div class="panel-heading"> EPS by product</div>
+                    <div class="panel-body ">
+                        <div id="chart4">{{ qradar_offense| safe }}</div>
+                    </div>
+                </div>
+            </div>
+     </div>
+</div>
+
+<script>
+    var data3= {{ qradar_offense| safe }};
+    var chart3= c3.generate({
+        bindto: '#chart3',
+        data: {
+        json: data3,
+        type: 'bar'
+    }
+
+
+    });
+</script>
+    <script>
+    $( document ).ready(function() {
+$.ajax({
+        url: '/qradar_offenses',
+        data: '',
+        dataType: 'json',
+        success: function (data) {
+
+
+data = data.qradar_offense;
+c3.generate({
+        bindto: '#chart4',
+        data: {
+        json: data,
+        type: 'pie',
+    }});
+        }
+      });
+});
+    </script>
+
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+
+
+    Data {{ data }} <br>
+    Outcome {{ outcome }}<br>
+    Error {{ error }}<br>
+    Success {{ success }}<br>
+
+    {{ request.POST.host }}
+    {{ request.POST.username }}
+    {{ request.POST.password }}
+
+
+    {% if outcome == 'error' %}
+        <h2 class="h2"> {{ error }}</h2>
+    {% else %}
+            <h1> McAfee response summary</h1>
+        <table id="mcafee_systems_table" class="display" width="100%"></table>
+            <br>
+   {% endif %}
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+
+
+    <script>
+var dataSet = JSON.parse('{{ success | default_if_none:'' }}');
+
+    console.log(dataSet);
+
+$(document).ready(function() {
+
+    function sanitizeData(jsonArray) {
+        var newKey;
+        jsonArray.forEach(function(item) {
+            for (key in item) {
+                newKey = key.replace(/\s/g, '').replace(/\./g, '');
+                if (key != newKey) {
+                    item[newKey]=item[key];
+                    delete item[key];
+                }
+            }
+        })
+        return jsonArray;
+    }
+    //remove whitespace and dots from data : <propName> references
+
+
+    data = sanitizeData(dataSet);
+    //columns = sanitizeColumns(dataSet);
+
+    $('#mcafee_systems_table').DataTable( {
+        data: data,
+        columns: [
+			{ title: "Computer Name", data: "EPOComputerPropertiesComputerName"  },
+            { title: "EPOComputerPropertiesCPUType", data: "EPOComputerPropertiesCPUType"  },
+
+        ],
+    } );
+} );
+	</script>
+
+{% endblock %}

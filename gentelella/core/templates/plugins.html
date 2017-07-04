@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+<h2>Plugin integrations </h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Select the plugin to configure</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="row">
+
+              <div class="col-md-3 col-xs-12 widget widget_tally_box">
+                   <a href="/mcafee/config">
+                  <div class="caption">
+                    <p>McAfee ePolicy Orchestrator</p>
+                  </div>
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="{% static "images/plugins/mcafee_logo.png" %}" alt="image">
+                  </div>
+                  <div class="caption">
+                    <p>Fetch reports from McAfee</p>
+                      <p>And manage anti-virus</p>
+                  </div>
+                </div></a>
+              </div>
+
+                <div class="col-md-3 col-xs-12 widget widget_tally_box">
+                    <a href="/qradar/config">
+                  <div class="caption">
+                    <p>IBM QRadar</p>
+                  </div>
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="{% static "images/plugins/qradar_logo.png" %}" alt="image">
+                  </div>
+                  <div class="caption">
+                    <p>Get offense details</p>
+                      <p>And search raw logs</p>
+                  </div>
+                </div></a>
+              </div>
+
+              <div class="col-md-3 col-xs-12 widget widget_tally_box">
+                   <div class="caption">
+                    <p>ServiceNow</p>
+                  </div>
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="{% static "images/plugins/servicenow_logo.png" %}" alt="image">
+                  </div>
+                  <div class="caption">
+                    <p>Incidents and CMDB</p>
+                      <P> .</P>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-xs-12 widget widget_tally_box">
+                   <div class="caption">
+                    <p>ArcSight ESM</p>
+                  </div>
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="{% static "images/plugins/arcsight_logo.jpg" %}" alt="image">
+                  </div>
+                  <div class="caption">
+                    <p>Correlated events</p>
+                      <P> And raw logs</P>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-xs-12 widget widget_tally_box">
+                   <div class="caption">
+                    <p>Elasticsearch</p>
+                  </div>
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="{% static "images/plugins/elasticsearch_logo.png" %}" alt="image">
+                  </div>
+                  <div class="caption">
+                    <p>Search logs</p>
+                      <P> And fetch reports</P>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+{% endblock %}

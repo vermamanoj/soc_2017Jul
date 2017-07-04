@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block main_content %}
+
+    {% if data.outcome == 'error' %}
+        <h2 class="h2"> {{ data.error }}</h2>
+    {% else %}
+
+        {% if type == "summary" %}
+            <h1> ServiceNow Incident summary</h1>
+
+        <table id="snow_incident_table" class="display" width="100%"></table>
+
+            <br>
+        {% for d in data.result %}
+           <a href="/servicenow/incident/{{ d.sys_id }}">{{ forloop.counter }}</a>
+           Severity:  {{ d.severity }} ||
+           Description:  {{d.short_description }}<br>
+        {% endfor %}
+        {% endif %}
+
+        {% if type == "single" %}
+        <h2> ServiceNow Incident Details</h2>
+            <table class="table table-bordered">
+            {% for key, value in data.result.items %}
+
+                <tr><td>{{ key }}</td><td> {{ value }}</td></tr>
+            {% endfor %}
+            </table>
+            {{ data.result }}
+
+        {% endif %}
+    {% endif %}
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+
+
+    <script>
+	var dataSet = {{ data.result | safe }};
+    console.log(dataSet);
+
+$(document).ready(function() {
+    $('#snow_incident_table').DataTable( {
+        data: dataSet,
+        columns: [
+			{ title: "Number", data: "number"  },
+            { title: "Priority", data: "priority"  },
+            { title: "Assigned_to", data: 'assigned_to.name' },
+            { title: "short_description", data: "short_description"  },
+            { title: "state", data: "incident_state"  },
+            { title: "sys_created_on", data: "sys_created_on"  },
+            { title: "Opened_by", data: "opened_by.name"  },
+            { title: "Category", data: "category"  },
+            { title: "assignment_group.name", data: "assignment_group.name"  },
+        ]
+    } );
+} );
+	</script>
+{% endblock %}

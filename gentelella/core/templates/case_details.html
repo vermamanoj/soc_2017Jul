@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+{% block main_content %}
+
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+        <table id="case_details" class="table table-striped jambo_table bulk_action">
+        <thead>
+        <tr>
+            <th>Case ID</th>
+            <th>Priority</th>
+            <th>Assigned to</th>
+            <th>Status</th>
+            <th>Summary</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td > {{data_case.caseId}}</td>
+            <td>{{ data_case.priority}}</td>
+            <td>{{ data_case.assignedTo.username}}</td>
+            <td> {{ data_case.status}}</td>
+            <td> {{ data_case.summary}}</td>
+        </tr>
+    </tbody>
+    <h3 class="h3"> Case History - {{ data_case.caseId }}</h3>
+    </table>
+        <table id="case_history" class="table table-striped jambo_table bulk_action">
+        <thead>
+        <tr>
+            <th>Time stamp</th>
+            <th>Action</th>
+            <th> Remarks</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td > {{data_tracker.timestamp}}</td>
+            <td>{{ data_tracker.action}}</td>
+            <td>{{ data_notes.note}}</td>
+
+        </tr>
+    </tbody>
+    </table>
+    <form id="update_case">
+        <h3 class="H3"> Update case</h3>
+        <label> Add notes</label>
+        <textarea></textarea><br>
+
+        <label> Update status</label>
+                <select name="Status"> AAAAAA
+          <option value="volvo"></option>
+          <option value="saab">Assigned</option>
+          <option value="fiat">Hold</option>
+          <option value="audi">Closed</option>
+    </select>
+<input type="submit">
+    </form>
+</div>
+
+{% endblock %}
