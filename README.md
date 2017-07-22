@@ -11,8 +11,8 @@ Create
 5. Run the development server.
 
 
-## /config/config.ini file format
-## Future code will manage the file from within the program
+### /config/config.ini file format
+#### Future code will manage the file from within the program
 
 [qradar]
 host =
