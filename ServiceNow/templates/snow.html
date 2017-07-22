@@ -15,24 +15,24 @@
         <table id="snow_incident_table" class="display" width="100%"></table>
 
             <br>
-        {% for d in data.result %}
-           <a href="/servicenow/incident/{{ d.sys_id }}">{{ forloop.counter }}</a>
+            {% comment %}{% for d in data.success.result %}
+           <a href="/servicenow/sn_si_incident/{{ d.sys_id }}">{{ forloop.counter }}</a>
            Severity:  {{ d.severity }} ||
            Description:  {{d.short_description }}<br>
-        {% endfor %}
+        {% endfor %}{% endcomment %}
         {% endif %}
 
-        {% if type == "single" %}
+
         <h2> ServiceNow Incident Details</h2>
             <table class="table table-bordered">
-            {% for key, value in data.result.items %}
+                {% for key, value in data.success.result.items %}
 
                 <tr><td>{{ key }}</td><td> {{ value }}</td></tr>
             {% endfor %}
             </table>
             {{ data.result }}
 
-        {% endif %}
+
     {% endif %}
 
 
@@ -42,22 +42,31 @@
 
 
     <script>
-	var dataSet = {{ data.result | safe }};
+        var dataSet = {{ data.success.result | safe }};
     console.log(dataSet);
 
 $(document).ready(function() {
     $('#snow_incident_table').DataTable( {
         data: dataSet,
         columns: [
+            {
+                title: "Sys ID", data: "sys_id",
+                "render": function (data, type, row, meta) {
+                    if (type === 'display') {
+                        data = '<a href=/servicenow/sn_si_incident/' + data + '>' + data + '</a>';
+                    }
+                    return data;
+                }
+            },
 			{ title: "Number", data: "number"  },
             { title: "Priority", data: "priority"  },
-            { title: "Assigned_to", data: 'assigned_to.name' },
+            {title: "Assigned_to", data: 'assigned_toname'},
             { title: "short_description", data: "short_description"  },
             { title: "state", data: "incident_state"  },
             { title: "sys_created_on", data: "sys_created_on"  },
-            { title: "Opened_by", data: "opened_by.name"  },
+            {title: "Opened_by", data: "opened_byname"},
             { title: "Category", data: "category"  },
-            { title: "assignment_group.name", data: "assignment_group.name"  },
+            {title: "assignment_group.name", data: "assignment_groupname"},
         ]
     } );
 } );

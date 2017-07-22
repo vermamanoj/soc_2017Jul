@@ -49,17 +49,17 @@
         <h2 class="h2"> {{ error }}</h2>
  {% endif %}
 {% if success %}
-    //result in chart format
+    <h3>Result in chart format</h3>
     <div id="chart_container">
     <script src="{% static 'js/d3/d3v3.min.js'%}" charset="utf-8"></script>
     <script src="{% static 'js/c3/c3.min.js'%}"></script>
          <link href="{% static 'css/c3/c3.css' %}" rel="stylesheet">
 
     <div id="chart1">
-        <!-- Load d3.js and c3.js -->
-
+        SUCCESS - {{ success }}
         <script>
-            var data = {{ success | safe }}
+            var data = {{ success | safe }};
+
             var chart = c3.generate({
                 bindto: '#chart1',
                 data: {
@@ -77,9 +77,12 @@
               }
             });
         </script>
+        <!-- Load d3.js and c3.js -->
+
+
         </div>
     </div>
-    //result in table format
+    <h3>result in table format</h3>
 
     <table><tr>
     {% for x in success %}
@@ -92,9 +95,16 @@
     </table>
     {% endif %}
 
-    //result in raw format
-    <h2> {{ success }}</h2>
+
+
     {% endif %}
+
+
+    <script src="{% static 'js/d3/d3v3.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/c3/c3.min.js' %}"></script>
+    <link href="{% static 'css/c3/c3.css' %}" rel="stylesheet">
+
+
 
 
 {% endblock %}

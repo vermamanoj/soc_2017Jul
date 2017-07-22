@@ -1,17 +1,15 @@
 import json
 import os
-from django.http import JsonResponse, HttpResponse
-from django.shortcuts import render, redirect, render_to_response
-from . import qradar_auth
 
-#test imports
-from lightning import Lightning
-from numpy import random
-from django.views.generic import TemplateView
-from bokeh.plotting import figure, output_file, show
 from bokeh.embed import components
 from bokeh.models import HoverTool
+from bokeh.plotting import figure
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
+
+from . import qradar_auth
+
 
 @login_required(login_url='/login/')
 
@@ -88,6 +86,10 @@ def c3_dashboard(request):
 def ir_playbook_1(request):
     return render(request, 'IR_playbook_1.htm')
 
+
+def ir_playbook_2(request):
+    return render(request, 'ir_playbook_2.html')
+
 def qradar(request):
     return render(request, 'qradar.html' )
 
@@ -118,4 +120,23 @@ def bokeh(request):
 
     # Feed them to the Django template.
 
-    return render_to_response('bokeh_chart.html', {'script': script, 'div': div} )
+    # return render_to_response('bokeh_chart.html', {'script': script, 'div': div} )
+    return render(request, 'bokeh_chart2.html')
+
+
+def bokeh_json(request):
+    from bokeh.plotting import figure
+    from bokeh.embed import components
+
+    plot = figure()
+    plot.circle([1, 2], [3, 4])
+
+    script, div = components(plot)
+    result = {
+        "outcome": "success",
+        "success": {
+            "div": div,
+            "script": script,
+        }
+    }
+    return JsonResponse(result)

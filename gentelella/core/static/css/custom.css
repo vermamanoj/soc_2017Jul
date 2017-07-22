@@ -3215,14 +3215,13 @@ select.parsley-error {
 
 .daterangepicker_end_input {
     float: left;
-    padding-left: 11px
+    padding-left: 11px;
 }
 
 .daterangepicker th.month {
     width: auto;
 }
 
-//----
 .daterangepicker .daterangepicker_start_input label,
 .daterangepicker .daterangepicker_end_input label {
     color: #333;
@@ -3299,7 +3298,7 @@ select.parsley-error {
     border: none;
 }
 
-//----
+
 .daterangepicker.single .ranges,
 .daterangepicker.single .calendar {
     float: none;
@@ -3356,7 +3355,7 @@ textarea:focus {
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled false);
+    filter: progid: DXImageTransform.Microsoft.gradient(enabled = false);
     border: 1px solid #cccccc;
     border-bottom-color: #b3b3b3;
     -webkit-border-radius: 4px;
@@ -5304,7 +5303,7 @@ ul.project_files li a i {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #fff url("../img/loading.gif") no-repeat center center;
+    background: #fff url("../images/loading.gif") no-repeat center center;
     opacity: .75;
     filter: alpha(opacity=75);
     z-index: 20140628;

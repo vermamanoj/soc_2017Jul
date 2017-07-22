@@ -15,20 +15,15 @@
 
 <script>
 $(document).ready(function() {
-
   var xhttp = new XMLHttpRequest();
-
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("qradar_offenses").innerHTML =
       this.responseText;
     }
   };
-
   xhttp.open("GET", "/qo", true);
   xhttp.send();
-
-
 });
 </script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>

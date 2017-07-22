@@ -1,9 +1,11 @@
-from django.shortcuts import render, HttpResponse, redirect
-from django.http import JsonResponse
-from . import qradar_api_client, qradar_connector
-
 import json
 import logging
+
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
+
+from . import qradar_api_client, qradar_connector
+
 logger = logging.getLogger('root')
 FORMAT = "[%(filename)s:%(lineno)s-%(funcName)s] %(message)s"
 logging.basicConfig(format=FORMAT)
@@ -18,7 +20,7 @@ def index(request):
 def qradar_config(request):
     data = qradar_connector.get_qradar_config()
     if data['outcome'] == 'error':
-        logger
+
         return render(request, 'qradar_connector.html', data)
     else:
         result = {
@@ -34,18 +36,26 @@ def run_aql_query(request, *query):
     if request.method == 'GET':
         print("redirecting to /qradar")
         return redirect('/qradar')
-    print(request.POST['aql_query'])
+    logger.info((request.POST['aql_query']))
     search_id = qradar_api_client.q_create_search(request.POST['aql_query'])
+    logger.info(search_id)
     if "error" in search_id.keys():
         error_message = search_id['error']
+        logger.info(search_id['error'])
         return render(request, "qradar_aql.html", {"error": error_message})
     id = search_id['success']
-    if qradar_api_client.q_search_result_ready(id) == True:
+    logger.info(id)
+    res = qradar_api_client.q_search_result_ready(id)
+    logger.info("resposne receivced from q_search_result_ready")
+    logger.info(res)
+    if "success" in res.keys():
         result = qradar_api_client.q_get_searches_result(id)
     # as result is in format {'events': []}, sending actual value only
-    result = result['events']
-    print("Result size is " + str(result.__sizeof__()/1024) + "KB")
-    return render(request, "qradar_aql.html",{"success":result})
+        result = result['success']['events']
+        print("Result size is " + str(result.__sizeof__() / 1024) + "KB")
+        return render(request, "qradar_aql.html", {"success": result})
+    else:
+        return render(request, "qradar_aql.html", {"error": "Could not fetch data"})
 
 
 def qradar_events_category(request):
@@ -63,7 +73,8 @@ def qradar_events_category(request):
     if search_status['success'] == id:
         result = qradar_api_client.q_get_searches_result(id)
         # as result is in format {'events': []}, sending actual value only
-        result = result['events']
+        result = result['success']['events']
+        print(result)
         print("Result size is " + str(result.__sizeof__() / 1024) + "KB")
         # return render(request, "qradar_aql.html",{"success":result})
         response = {"success":
@@ -91,7 +102,7 @@ def qradar_userBySourceIP(request):
     if search_status['success'] == id:
         result = qradar_api_client.q_get_searches_result(id)
         # as result is in format {'events': []}, sending actual value only
-        result = result['events']
+        result = result['success']['events']
         print("Result size is " + str(result.__sizeof__()/1024) + "KB")
         #return render(request, "qradar_aql.html",{"success":result})
         response = {

@@ -1,0 +1,822 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+    <style>
+        <!--
+        /* Font Definitions */
+        @font-face {
+            font-family: "Cambria Math";
+            panose-1: 2 4 5 3 5 4 6 3 2 4;
+        }
+
+        @font-face {
+            font-family: Calibri;
+            panose-1: 2 15 5 2 2 2 4 3 2 4;
+        }
+
+        /* Style Definitions */
+        p.MsoNormal, li.MsoNormal, div.MsoNormal {
+            margin-top: 0cm;
+            margin-right: 0cm;
+            margin-bottom: 8.0pt;
+            margin-left: 0cm;
+            line-height: 107%;
+            font-size: 11.0pt;
+            font-family: "Calibri", sans-serif;
+        }
+
+        a:link, span.MsoHyperlink {
+            color: #0563C1;
+            text-decoration: underline;
+        }
+
+        a:visited, span.MsoHyperlinkFollowed {
+            color: #954F72;
+            text-decoration: underline;
+        }
+
+        .MsoChpDefault {
+            font-family: "Calibri", sans-serif;
+        }
+
+        .MsoPapDefault {
+            margin-bottom: 8.0pt;
+            line-height: 107%;
+        }
+
+        @page WordSection1 {
+            size: 595.3pt 841.9pt;
+            margin: 72.0pt 72.0pt 72.0pt 72.0pt;
+        }
+
+        div.WordSection1 {
+            page: WordSection1;
+        }
+
+        /* List Definitions */
+        ol {
+            margin-bottom: 0cm;
+        }
+
+        ul {
+            margin-bottom: 0cm;
+        }
+
+        -->
+    </style>
+    <center>
+        <div class=WordSection1>
+
+            <p class=MsoNormal></p>
+
+            <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+                   style='width:517.4pt;margin-left:-28.6pt;border-collapse:collapse;border:none'>
+                <tr style='height:17.5pt'>
+                    <td width=690 colspan=5 valign=top style='width:517.4pt;border:solid windowtext 1.0pt;
+  background:#44546A;padding:0cm 5.4pt 0cm 5.4pt;height:17.5pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=162 colspan=2 valign=top style='width:121.55pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Response ID</p>
+                    </td>
+                    <td width=396 colspan=2 valign=top style='width:296.65pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Name</p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Category</p>
+                    </td>
+                </tr>
+                <tr style='height:17.5pt'>
+                    <td width=162 colspan=2 valign=top style='width:121.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:17.5pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>SIR-001</p>
+                    </td>
+                    <td width=396 colspan=2 valign=top style='width:296.65pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:17.5pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Suspicious email attachment or link</p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:17.5pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Email security</p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=690 colspan=5 valign=top style='width:517.4pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Description</p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=690 colspan=5 valign=top style='width:517.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>A user reports receiving of a suspicious email attachment or embedded
+                            link</p>
+                    </td>
+                </tr>
+                <tr style='height:17.5pt'>
+                    <td width=162 colspan=2 valign=top style='width:121.55pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:17.5pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Response Version</p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:17.5pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Last updated</p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:17.5pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Author</p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:17.5pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=162 colspan=2 valign=top style='width:121.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'></p>
+                    </td>
+                </tr>
+                <tr style='height:17.5pt'>
+                    <td width=690 colspan=5 valign=top style='width:517.4pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#44546A;padding:0cm 5.4pt 0cm 5.4pt;height:17.5pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>ID</p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Task</p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Description</p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Incident handler</p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#DEEAF6;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>Tool</p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>1.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>User reported suspicious email with an
+  attachment</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>User reported receiving a suspicious
+  email with an attachment or embedded link.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service desk</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Phone</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Email</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service Now</span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>2.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Log relevant information from suspect
+  system</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Log relevant information from suspect
+  system</span></p>
+                        <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt;font-family:Symbol'><span
+                                style='font:7.0pt "Times New Roman"'>
+  </span></span><span style='font-size:9.0pt'>Employee Name </span></p>
+                        <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt;font-family:Symbol'><span
+                                style='font:7.0pt "Times New Roman"'>
+  </span></span><span style='font-size:9.0pt'>Hostname</span></p>
+                        <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt;font-family:Symbol'><span
+                                style='font:7.0pt "Times New Roman"'>
+  </span></span><span style='font-size:9.0pt'>Operating System with Service
+  Pack</span></p>
+                        <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt;font-family:Symbol'><span
+                                style='font:7.0pt "Times New Roman"'>
+  </span></span><span style='font-size:9.0pt'>Location of Employee</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service desk</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service Now</span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>3.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Acquire a copy of the email message in
+  .msg format</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Ask user to attach the original email in
+  a new mail message and send to service desk.</span></p>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Log email details in the ticket,
+  including: Company email or personal email; date &amp; time the email was
+  received; sender; subject.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service desk</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service Now</span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>4.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Assign incident to SOC</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Set priority, fill other necessary
+  details and assign the incident to SOC team.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service desk</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service Now</span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>5.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Analyze email header</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Check email header IP's against open
+  source reputation services to identify any addresses that are on blacklists.
+  Examples of such IP reputation services include: </span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt'>http://Ipvoid.com</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt'>http://virustotal.com</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt'>http://robtex.com</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt'>http://malc0de.com</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt'></span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:9.0pt'>If the sender or
+  source IP is blacklisted, go to step 6 else go to step 7.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>SOC</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Outlook</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Text processor</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Web browser</span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>6.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Block the sender</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Notify messaging/content filter team to block
+  the source IP or sender.</span></p>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Note details in incident journal.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>SOC</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Email</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service Now</span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>7.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Scan attachment</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>If possible, scan the suspicious
+  attachment on an isolated system using authorised virus scanner.</span></p>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>If the attachment is found to be
+  suspicious, go to step X.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>SOC</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>McAfee anti-virus</span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>8.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Send attachment to OEM</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>If no conclusion was found, send the
+  attachment to anti-virus company for further scan. Follow instructions in the
+  following link:</span></p>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><a
+                                href="https://www.mcafee.com/ca/threat-center/resources/how-to-submit-sample.aspx"><span
+                                style='font-size:9.0pt'>https://www.mcafee.com/ca/threat-center/resources/how-to-submit-sample.aspx</span></a>
+                        </p>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>If the attachment is found to be
+  suspicious, go to step X, else go to step Y.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>SOC</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>9.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Inform user of result</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Inform the user that the attachment was a
+  malware. Ask the user to delete the file without opening.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>SOC</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>10.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Update anti-virus server</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Anti-virus OEM might provide temporary
+  fix to detect the malware, install the same in anti-virus server and deploy
+  on all clients.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>SOC</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>11.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Remove malware</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Perform AV scan. If unsuccessful, request
+  system reimage.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>12.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Place additional blocks</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Place blocks for any malicious sites or
+  transmission methods used by the malware.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>13.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Confirm the host is functioning
+  properly</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Confirm that the affected system is
+  operating normally. Flag the hosts and user for future alerts if the
+  infection was deemed targeted.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>14.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Inform messaging and content security
+  team</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Inform messaging and content security
+  team about the malware. Ask them to find other recipients to whom the email
+  was sent from the sender or where the email contained same attachment.</span></p>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Inform these teams to block further
+  emails from the sender.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>SOC</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Email</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>ServiceNow</span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>15.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Inform other recipients</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Send a note to other recipients to not
+  open that email and get their systems scanned after updating the anti-virus
+  client.</span></p>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'></span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>SOC</span></p>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Service Desk</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Email</span></p>
+                    </td>
+                </tr>
+                <tr style='height:18.7pt'>
+                    <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>16.</span></p>
+                    </td>
+                    <td width=115 valign=top style='width:86.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>Close the incident</span></p>
+                    </td>
+                    <td width=301 valign=top style='width:225.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:12.0pt;line-height:normal;text-autospace:
+  none'><span style='font-size:9.0pt'>Log all actions and close the incident.</span></p>
+                    </td>
+                    <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>SOC</span></p>
+                    </td>
+                    <td width=132 valign=top style='width:99.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:18.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:9.0pt'>ServiceNow</span></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
+
+
+{% endblock %}

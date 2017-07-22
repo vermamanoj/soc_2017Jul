@@ -2,13 +2,15 @@
 #ServiceNow
 
 
+import logging
 import os
 import sys
-import requests
 from configparser import ConfigParser
+
+import requests
+
 from gentelella.core import global_config
 
-import logging
 logger = logging.getLogger('root')
 FORMAT = "[%(filename)s:%(lineno)s-%(funcName)s] %(message)s"
 logging.basicConfig(format=FORMAT)
@@ -57,8 +59,10 @@ def get_snow_config():
         }
         return result
 
-def get_snow_data(table='incident',*arg):
 
+# def get_snow_data(table='incident',*arg):
+
+def get_snow_data(table='sn_si_incident', *arg):
     # Set the request parameters
     # URL format - 'https://dev24263.service-now.com/api/now/'
 
@@ -74,8 +78,10 @@ def get_snow_data(table='incident',*arg):
         # Do the HTTP request
         if arg:
             url = baseurl + 'table/' + table + arg[0] + arg[1]
+            logger.info(url)
         else:
             url = baseurl + 'table/' + table
+            logger.info(url)
         try:
             response = requests.get(url, auth=(username, password), headers=headers)
             # Check for HTTP codes other than 200
@@ -91,6 +97,7 @@ def get_snow_data(table='incident',*arg):
 
             # Decode the JSON response into a dictionary and use the data
             data = {'outcome': 'success', 'success': response.json()}
+            print(data)
             return (data)
         except:
             logger.error(sys.exc_info())

@@ -2,10 +2,6 @@
 {% load static %}
 
 {% block main_content %}
-<link href="{% static 'css/c3/c3.css' %}" rel="stylesheet">
-<!-- Load d3.js and c3.js -->
-<script src="{% static 'js/d3/d3v3.min.js'%}" charset="utf-8"></script>
-<script src="{% static 'js/c3/c3.min.js'%}"></script>
 <h3 class="h3"> QRadar Dashboard </h3>
     {{ success }}
 <div class="container-fluid">
@@ -149,5 +145,31 @@
     }
     });
 </script>
+
+    <script>
+        $.ajax({
+            url: '/qradar/events_category',
+            success: function (result) {
+                var data = result.success.events_by_category;
+                var chart = c3.generate({
+                    bindto: '#chart2',
+                    data: {
+                        json: data.data,
+                        type: 'bar',
+                        keys: {
+                            x: 'CategoryName',
+                            value: ['COUNT']
+                        }
+                    },
+                    axis: {
+                        x: {
+                            type: 'category',
+
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 
 {% endblock %}

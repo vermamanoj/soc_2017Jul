@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>AWS Instance details</h2>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="false">
+                                <i class="fa fa-wrench"></i> actions
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                                <li><a href="javascript:send_email();"> Send email to owner</a>
+                                </li>
+                                <li><a href="javascript:;"> Shutdown instance</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:secure_acl();">Secure ACL</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="row">
+                        <div id="loading">Loading data, please wait...
+                            <img height=80 width=80 src="{% static 'images/loading.gif' %} "></img>
+                        </div>
+                        <table id="table_instance_acl" class="display" width="100%"></table>
+                        <div id="div_instance_acl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+
+    <script>
+        function f2() {
+            var url = "{{url}}";
+            //var url = '/aws/get_instance_acl_json/' + instance_id;
+            console.log(url);
+            $.ajax({
+                url: url,
+                success: function (result) {
+                    var data = result.success[0];
+                    var table = "<table class='table'><tr>"
+                    table += "<th>Instance Name</th>"
+                    table += "<th>Security Group</th>"
+                    table += "<th>Security Group Description</th>"
+                    table += "</tr><tr>"
+                    table += "<td>" + data.instance_name + "</td>"
+                    table += "<td>" + data.security_group_name + "</td>"
+                    table += "<td>" + data.security_group_description + "</td>"
+                    table += "</tr></table>"
+                    table += "<div><h2>Security group Inbound ACL details</h2></div>"
+                    table += "<table class='table table-striped'><tr>"
+                    table += " <thead class='thead-inverse'><tr>"
+                    table += "<th>From</th>"
+                    table += "<th>Port</th>"
+                    table += "<th>Insecure</th>"
+                    table += "</thead></tr>"
+                    for (var i = 0; i < data.acl_list.length; i++) {
+                        table += "<tr>"
+                        table += "<td>" + data.acl_list[i].iprange + "</td>"
+                        table += "<td>" + data.acl_list[i].toport + "</td>"
+                        table += "<td>" + data.acl_list[i].insecure + "</td>"
+                        table += "</tr>"
+                    }
+                    table += "</table>"
+
+                    console.log(table)
+                    $("#loading").hide();
+                    var v = document.getElementById("div_instance_acl");
+                    v.innerHTML = table;
+                }
+            });
+        }
+        window.onload = f2;
+
+        function send_email() {
+            var url = '/aws/send_email/';
+            $.ajax({
+                url: url,
+                success: function (result) {
+                    alert(result.success);
+                }
+            });
+        }
+
+        function secure_acl() {
+            var res = document.URL.split("/");
+
+            var url = '/aws/secure_acl/' + res[res.length - 1];
+            $.ajax({
+                url: url,
+                success: function (result) {
+                    alert(result.success);
+                    f2();
+                }
+            });
+        }
+
+
+    </script>
+{% endblock main_content %}

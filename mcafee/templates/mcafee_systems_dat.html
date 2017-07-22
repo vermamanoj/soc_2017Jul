@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+
+
+
+    {% if outcome == 'error' %}
+        <h2 class="h2"> {{ error }}</h2>
+    {% else %}
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Anti-virus DAT status</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="row">
+
+                        <table id="mcafee_dat_table" class="display" width="100%">
+                            <div id="loading">Loading data, please wait...
+                                <img height=80 width=80 src="{% static 'images/loading.gif' %} "></img>
+                            </div>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    {% endif %}
+    <hr>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+
+    <script>
+        $.ajax({
+            url: '/mcafee/system_dat_json',
+            success: function (result) {
+                //var data = result.success;
+                $('#mcafee_dat_table').DataTable({
+                    data: result,
+                    columns: [
+                        {
+                            title: "System Name", data: "System Name",
+                            "render": function (data, type, row, meta) {
+                                if (type === 'display') {
+                                    data = '<a href=/aws/get_instance_acl/' + data + '>' + data + '</a>';
+                                }
+
+                                return data;
+                            }
+                        },
+                        {title: "Operating System", data: "Operating System"},
+
+                        {title: "DAT Version (VirusScan Enterprise)", data: "DAT Version (VirusScan Enterprise)"},
+
+                        //{ title: "ACL-Insecure?", data: "acl_list", render: "[,].insecure"},
+                        //{ title: "ACL-ToPort", data: "acl_list", render: "[, ].toport"},
+                        //{ title: "ACL-IP_Range", data: "acl_list", render: "[0].iprange"},
+
+
+                    ]
+                });
+                $("#loading").hide();
+            }
+        });
+
+        $(document).ready(function () {
+            var data = {{ success | safe }}
+                console.log(data);
+            $('#mcafee_systems_table').DataTable({
+                data: data,
+                columns: [
+                    {title: "ComputerName", data: "ComputerName"},
+                    {title: "OS", data: "OS"},
+                ],
+            });
+        });
+    </script>
+{% endblock %}

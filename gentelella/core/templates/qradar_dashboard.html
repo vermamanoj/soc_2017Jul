@@ -13,13 +13,28 @@
 <div class="container-fluid">
      <div class="row">
 
-        <div class="col-sm-4">
+         <div class="col-sm-4">
+             <div class="panel panel-default" style="height:350px;width:400px;">
+                 <div class="panel-heading"> QRadar Offenses by category</div>
+                 <div class="panel-body ">
+                     <div id="chart2">
+                         <div id="loading">Loading data, please wait...
+                             <img height=80 width=80 src="{% static 'images/loading.gif' %} "></img>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div class="col-sm-4">
             <div class="panel panel-default" style="height:350px;width:400px;">
                 <div class="panel-heading"> QRadar Offense Summary</div>
                     <div class="panel-body ">
+
                         <div id="chart3">
-                            c3_dashboard.html
+
                         </div>
+
 
                     </div>
                 </div>
@@ -68,6 +83,30 @@ c3.generate({
 });
     </script>
 
+    <script>
+        $.ajax({
+            url: '/qradar/events_category',
+            success: function (result) {
+                var data = result.success.events_by_category;
+                var chart = c3.generate({
+                    bindto: '#chart2',
+                    data: {
+                        json: data.data,
+                        type: 'bar',
+                        keys: {
+                            x: 'CategoryName',
+                            value: ['COUNT']
+                        }
+                    },
+                    axis: {
+                        x: {
+                            type: 'category',
 
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 
 {% endblock %}

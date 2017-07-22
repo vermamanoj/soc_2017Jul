@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+    <div id="loading">Loading data, please wait...
+        <img height=80 width=80 src="{% static 'images/loading2.gif' %} "></img>
+    </div>
+    <table id="insecure_instance_acl" class="display" width="100%"></table>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+
+    <script>
+        function f2() {
+
+            $.ajax({
+                url: '/aws/insecure_instance_acl',
+                success: function (result) {
+                    var data = result.success;
+                    $('#insecure_instance_acl').DataTable({
+                        data: data,
+                        columns: [
+                            {title: "Instance", data: "instance_name"},
+                            {title: "Ports", data: 'port_list'},
+                            {
+                                title: "Security Group", data: "security_group_name",
+                                "render": function (data, type, row, meta) {
+                                    if (type === 'display') {
+                                        data = '<a href="' + "/aws/config" + '">' + data + '</a>';
+                                    }
+
+                                    return data;
+                                }
+                            },
+                        ]
+                    });
+                    $("#loading").hide();
+                }
+            });
+        }
+        window.onload = f2;
+
+
+    </script>
+
+{% endblock %}

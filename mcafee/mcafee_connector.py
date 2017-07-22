@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 
+import logging
 import os
 import sys
-import requests
 from configparser import ConfigParser
+
 from gentelella.core import global_config
 
-import logging
 logger = logging.getLogger('root')
 FORMAT = "[%(filename)s:%(lineno)s-%(funcName)s] %(message)s"
 logging.basicConfig(format=FORMAT)
@@ -181,15 +181,23 @@ def get_mcafee_data(command = 'system.find', parameter = ''):
             mcafee_client = McAfeeClient(url, username, password)
             data = mcafee_client(command, parameter)
 
+            list = []
+            for system in data:
+                dict = {}
+                dict['ComputerName'] = system['EPOComputerProperties.ComputerName']
+                dict['OS'] = system['EPOComputerProperties.OSType']
+                list.append(dict)
+
             result = {
                 "outcome": "success",
-                "success": data
+                "success": list
+
             }
             print(result)
             return result
         except:
-            logger.error(sys.exc_info())
-            return {'outcome':'error', 'error': sys.exc_info()}
+            logger.error(sys.exc_info()[1])
+            return {'outcome': 'error', 'error': sys.exc_info()[1]}
     else:
         result = {
             "outcome": "error",

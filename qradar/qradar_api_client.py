@@ -12,16 +12,18 @@
 # at the /api/help/versions endpoint.
 
 import base64
-# import configparser
 import json
+import logging
 import ssl
 import sys
-import os
 import urllib.request
-from . import qradar_connector
-# import getpass
-# from django.shortcuts import redirect
 
+from . import qradar_connector
+
+logger = logging.getLogger('root')
+FORMAT = "[%(filename)s:%(lineno)s-%(funcName)s] %(message)s"
+logging.basicConfig(format=FORMAT)
+logger.setLevel(logging.INFO)
 
 
 def q_apiclient(endpoint, query='', id=''):
@@ -75,7 +77,10 @@ def q_apiclient(endpoint, query='', id=''):
     except:
         e = sys.exc_info()[1]
         print(e)
-        error = {"Error":"Connection failed : " + str(e), "Response":response}
+        error = {
+            "outcome": "error",
+            "error": "Connection failed : " + str(e), "Response": response
+        }
         return error
 
 
@@ -102,19 +107,22 @@ def q_search_result_ready(search_id):
     url = endpoint + '/' + search_id
     #response2 = urllib.request.urlopen(url)
     response_body2 = q_apiclient(url)
-    print("Response_body2 status = " + response_body2['status'])
+    logger.info("Response_body2 status = ")
+    logger.info(response_body2['status'])
 
     error = False
     while (response_body2['status'] != 'COMPLETED') and not error:
         if (response_body2['status'] == 'EXECUTE') | \
                 (response_body2['status'] == 'SORTING') | \
                 (response_body2['status'] == 'WAIT'):
-
             response_body2 = q_apiclient(url)
-            print("Response_body2 status = " + response_body2['status'])
+            logger.info("Response_body2 status = ")
+            logger.info(response_body2['status'])
         else:
-            print("Response_body2 ERROR ")
+            error = True
+            logger.info("Response_body2 ERROR ")
             return {"error": "error in getting result"}
+    logger.info("returning success")
     return {"success": search_id}
 
 '''
@@ -126,5 +134,9 @@ def q_get_searches_result(search_id):
     url = endpoint + search_id + "/results"
     search_results = q_apiclient(url)
 
-
-    return search_results
+    result = {
+        "outcome": "success",
+        "success": search_results,
+    }
+    logger.info(result)
+    return result

@@ -1,0 +1,109 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Complete Example</title>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.css" type="text/css"/>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-api-0.12.5.min.js"></script>
+    <!-- The order of CSS and JS imports above is important. -->
+</head>
+
+<body>
+
+<div>
+
+    <div id="bokeh_json"></div>
+
+    <div id="myplot"/>
+
+</div>
+
+<button onclick="addPoint()">Add some data!</button>
+
+<script type="text/javascript">
+
+    var plt2 = Bokeh.Plotting;
+
+    var bar_data = [
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000],
+    ];
+
+    var p1 = Bokeh.Charts.bar(bar_data, {
+        axis_number_format: "0.[00]a"
+    });
+    var p2 = Bokeh.Charts.bar(bar_data, {
+        axis_number_format: "0.[00]a",
+        stacked: true
+    });
+    var p3 = Bokeh.Charts.bar(bar_data, {
+        axis_number_format: "0.[00]a",
+        orientation: "vertical"
+    });
+    var p4 = Bokeh.Charts.bar(bar_data, {
+        axis_number_format: "0.[00]a",
+        orientation: "vertical",
+        stacked: true
+    });
+
+    Bokeh.Plotting.show(Bokeh.Plotting.gridplot([p1, p2, p3, p4]));
+
+    // arrays to hold data
+    var source = new Bokeh.ColumnDataSource({
+        data: {x: [Math.random()], y: [Math.random()]}
+    });
+
+    // make the plot and add some tools
+    var tools = "pan,crosshair,wheel_zoom,box_zoom,reset,save";
+
+    var plot = Bokeh.Plotting.figure({title: 'Example of Random data', tools: tools, height: 300, width: 300});
+
+    var scatterData = plot.line({field: "x"}, {field: "y"}, {
+        source: source,
+        line_width: 2
+    });
+
+    // Show the plot, appending it to the end of the current
+    // section of the document we are in.
+    Bokeh.Plotting.show(plot, document.getElementById('myplot'));
+
+    function addPoint() {
+        // The data can be added, but generally all fields must be the
+        // same length.
+        source.data.x.push(Math.random());
+        source.data.y.push(Math.random());
+        // Also, the DataSource object must be notified when it has changed.
+        source.trigger('change');
+    }
+
+</script>
+
+<script>
+    $.ajax({
+        url: '/bokeh_json',
+        success: function (result) {
+            var div = result.success.div;
+            var script_ = result.success.script;
+            console.log(div);
+            console.log(script_);
+
+            var hd = document.head
+            hd.append(script_)
+
+            var bd = document.getElementById('bokeh_json');
+            bd.append(div);
+        }
+    });
+</script>
+
+</div>
+</body>
+</html>

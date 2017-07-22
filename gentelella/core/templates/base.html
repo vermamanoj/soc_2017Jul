@@ -24,8 +24,10 @@
     <link href="{% static 'css/icheck/flat/green.css' %}" rel="stylesheet" />
     <link href="{% static 'css/floatexamples.css' %}" rel="stylesheet" type="text/css" />
     <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %} "></script>
+    <script src="{% static 'js/custom.js' %} "></script>
 
-    
+
     <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
         <![endif]-->
@@ -59,41 +61,41 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                         <div class="menu_section">
-                            <h3>General</h3>
+
                             <ul class="nav side-menu">
                                 <li><a><i class="fa fa-home"></i> Dashboards <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
+                                        <li><a href="/">Executive dashboard</a>
+                                        </li>
+                                        <li><a href="/">Operational dashboard</a>
+                                        </li>
                                         <li><a href="/qradar_dashboard">QRadar Dashbaord</a>
                                         </li>
                                         <li><a href="/qradar_offense_list">QRadar Offenses</a>
                                         </li>
                                         <li><a href="/servicenow">Service Now</a>
                                         </li>
-                                        <li><a href="index3.html">Dashboard3</a>
-                                        </li>
+
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-edit"></i> Investigation support <span
+                                        class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="/qradar">QRadar AQL query</a>
                                         </li>
-                                        <li><a href="form_advanced.html">Advanced Components</a>
+                                        <li><a href="/qradar">Threat feeds</a>
                                         </li>
-                                        <li><a href="form_validation.html">Form Validation</a>
+                                        <li><a href="/qradar">Malware analysis</a>
                                         </li>
-                                        <li><a href="form_wizards.html">Form Wizard</a>
-                                        </li>
-                                        <li><a href="form_upload.html">Form Upload</a>
-                                        </li>
-                                        <li><a href="form_buttons.html">Form Buttons</a>
-                                        </li>
+
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-desktop"></i> Operations Support <span
+                                        class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="general_elements.html">General Elements</a>
+                                        <li><a href="/ir_playbook_2">Knowledge base</a>
                                         </li>
-                                        <li><a href="media_gallery.html">Media Gallery</a>
+                                        <li><a href="media_gallery.html">Checklists</a>
                                         </li>
                                         <li><a href="typography.html">Typography</a>
                                         </li>
@@ -136,7 +138,7 @@
                             </ul>
                         </div>
                         <div class="menu_section">
-                            <h3>Settings</h3>
+
                             <ul class="nav side-menu">
                                 <li><a><i class="fa fa-plug"></i> Plugins <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
@@ -151,23 +153,6 @@
                                         <li><a href="profile.html">Profile</a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li><a href="page_404.html">404 Error</a>
-                                        </li>
-                                        <li><a href="page_500.html">500 Error</a>
-                                        </li>
-                                        <li><a href="plain_page.html">Plain Page</a>
-                                        </li>
-                                        <li><a href="login.html">Login Page</a>
-                                        </li>
-                                        <li><a href="pricing_tables.html">Pricing Tables</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li><a><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -206,7 +191,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="{% static 'images/img.jpg' %}" alt="">John Doe
+                                    admin
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
@@ -228,70 +213,26 @@
 
                             <li role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
+                                    <i class="fa fa-bell"></i>
+                                    <span class="badge bg-green">3</span>
                                 </a>
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
-                                    <li>
-                                        <a>
-                                            <span class="image">
-                                        <img src="{% static 'images/img.jpg' %}" alt="Profile Image" />
-                                    </span>
-                                            <span>
-                                        <span>John Smith</span>
-                                            <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where... 
-                                    </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="image">
-                                        <img src="{% static 'images/img.jpg' %}" alt="Profile Image" />
-                                    </span>
-                                            <span>
-                                        <span>John Smith</span>
-                                            <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where... 
-                                    </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="image">
-                                        <img src="{% static 'images/img.jpg' %}" alt="Profile Image" />
-                                    </span>
-                                            <span>
-                                        <span>John Smith</span>
-                                            <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where... 
-                                    </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="image">
-                                        <img src="{% static 'images/img.jpg' %}" alt="Profile Image" />
-                                    </span>
-                                            <span>
-                                        <span>John Smith</span>
-                                            <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where... 
-                                    </span>
-                                        </a>
-                                    </li>
+                                    <li><a href="/aws/get_insecure_instances">
+                                        <span class="time">7 mins ago</span>
+                                        <span class="message">Insecure AWS configuration</span>
+                                    </a></li>
+                                    <li><a>
+                                        <span class="time">10 mins ago</span>
+                                        <span class="message">Data leak - HR data</span>
+                                    </a></li>
+                                    <li><a>
+                                        <span class="time">18 mins ago</span>
+                                        <span class="message">SQL injection detected</span>
+                                    </a></li>
                                     <li>
                                         <div class="text-center">
                                             <a>
-                                                <strong><a href="inbox.html">See All Alerts</strong>
+                                                <strong><a href="inbox.html">See All Alerts</a></strong>
                                                 <i class="fa fa-angle-right"></i>
                                             </a>
                                         </div>
@@ -358,13 +299,13 @@
         <div id="notif-group" class="tabbed_notifications"></div>
     </div>
 
-    <script src="{% static 'js/bootstrap.min.js' %} "></script>
 
     <!-- bootstrap progress js -->
-    <script src="{% static 'js/progressbar/bootstrap-progressbar.min.js' %} "></script>
-    <script src="{% static 'js/nicescroll/jquery.nicescroll.min.js' %} "></script>
+    <link href="{% static 'css/c3/c3.css' %}" rel="stylesheet">
+    <!-- Load d3.js and c3.js -->
+    <script src="{% static 'js/d3/d3v3.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/c3/c3.min.js' %}"></script>
 
-    <script src="{% static 'js/custom.js' %} "></script>
 
 
     <!-- /footer content -->

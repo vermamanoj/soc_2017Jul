@@ -18,10 +18,14 @@ from django.conf.urls import url
 from .views import *
 
 urlpatterns = [
-    url(r'^$', mcafee_system_list),
-    url(r'system_list_json/$', mcafee_system_list_json),
-    url(r'system_dat_json/$', system_dat_json),
-    url(r'system_dat/$', system_dat),
+    url(r'^$', index),
+    url(r'config', config),
+    url(r'get_insecure_instances', get_insecure_instances, name="get_insecure_instances"),
+    url(r'insecure_instance_acl_json', insecure_instance_acl_json),
+    url(r'get_instance_acl_json/(i-\w+)$', get_instance_acl_json, name="get_instance_acl_json"),
+    url(r'get_instance_acl/(i-\w+)$', get_instance_acl, name="get_instance_acl"),
+    url(r'send_email', send_email, name="send_email"),
+    url(r'secure_acl/(i-\w+)$', secure_acl, name="secure_acl"),
+    # url(r'insecure_instance_acl', insecure_instance_acl_old),
 
-    url(r'config/$', mcafee_config),
 ]
