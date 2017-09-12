@@ -62,7 +62,7 @@ def get_snow_config():
 
 # def get_snow_data(table='incident',*arg):
 
-def get_snow_data(table='sn_si_incident', *arg):
+def get_snow_data(table='incident', *arg):
     # Set the request parameters
     # URL format - 'https://dev24263.service-now.com/api/now/'
 

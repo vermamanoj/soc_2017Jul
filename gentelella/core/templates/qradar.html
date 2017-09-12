@@ -8,23 +8,56 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="{% static 'js/nprogress.js' %}"></script>
 {% block main_content %}
-    <div id="qradar_offenses">
-    <h2> Loading ... </h2>
-    <img src="{% static 'images/giphy_loading.gif' %}" height="80" width="80"/>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>QRadar Offense details</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="row">
+                        <div id="qradar_offenses">
+                            <div id="loading">Loading data, please wait...
+                                <img height=80 width=80 src="{% static 'images/loading.gif' %} "></img>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div id="">
+    <p>Loading ...
+        <img src="{% static 'images/loading.gif' %}" height="80" width="80"/>
+    </p>
     </div>
 
 <script>
-$(document).ready(function() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("qradar_offenses").innerHTML =
-      this.responseText;
+    //$(document).ready(function() {
+    function load_qradar_offenses() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            console.log(this.responseText);
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("qradar_offenses").innerHTML =
+                    this.responseText;
+            }
+        };
+        xhttp.open("GET", "/qo", true);
+        xhttp.send();
+        //});
+
     }
-  };
-  xhttp.open("GET", "/qo", true);
-  xhttp.send();
-});
+    window.onload = load_qradar_offenses();
 </script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script src="{% static 'js/datatables/js/jquery.dataTables.js' %}"></script>

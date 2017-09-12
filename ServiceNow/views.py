@@ -12,7 +12,7 @@ logger.setLevel(logging.INFO)
 
 
 # def servicenow(request, table = "incident", *arg):
-def servicenow(request, table="sn_si_incident", *arg):
+def servicenow(request, table="incident", *arg):
     if arg:
         table = table
         sys_id = arg[0]

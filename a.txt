@@ -1,0 +1,455 @@
+On branch develop
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/css/base.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/css/changelists.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/css/dashboard.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/css/fonts.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/css/forms.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/css/login.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/css/rtl.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/css/widgets.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/LICENSE.txt
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/README.txt
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/Roboto-Bold-webfont.woff
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/Roboto-Light-webfont.woff
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/Roboto-Regular-webfont.woff
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/LICENSE
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/README.txt
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/calendar-icons.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/gis/move_vertex_off.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/gis/move_vertex_on.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-addlink.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-alert.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-calendar.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-changelink.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-clock.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-deletelink.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-no.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-unknown-alt.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-unknown.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-yes.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/inline-delete.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/search.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/selector-icons.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/sorting-icons.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/tooltag-add.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/img/tooltag-arrowright.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/SelectBox.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/SelectFilter2.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/actions.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/actions.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/admin/DateTimeShortcuts.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/admin/RelatedObjectLookups.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/calendar.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/collapse.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/collapse.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/core.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/inlines.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/inlines.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/jquery.init.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/prepopulate.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/prepopulate.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/timeparse.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/urlify.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/jquery/jquery.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/jquery/jquery.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/xregexp/xregexp.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/animate.min.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap.min.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap-theme.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap-theme.css.map
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap-theme.min.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap-theme.min.css.map
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap.css.map
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap.min.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap.min.css.map
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/c3/c3.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/custom.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/demo_page.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/demo_table.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/demo_table_jui.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/jquery.dataTables.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/jquery.dataTables_themeroller.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/Sorting icons.psd
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/back_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/back_enabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/back_enabled_hover.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/favicon.ico
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/forward_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/forward_enabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/forward_enabled_hover.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_asc.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_asc_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_both.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_desc.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_desc_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/datatables/tools/css/dataTables.tableTools.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/floatexamples.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/css/nprogress.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/django_extensions/css/jquery.autocomplete.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/django_extensions/img/indicator.gif
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/django_extensions/js/jquery.ajaxQueue.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/django_extensions/js/jquery.autocomplete.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/django_extensions/js/jquery.bgiframe.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/djng/css/bootstrap3.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/djng/css/styles.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/djng/js/django-angular.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/djng/js/django-angular.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/css/font-awesome.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/css/font-awesome.min.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/FontAwesome.otf
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/fontawesome-webfont.eot
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/fontawesome-webfont.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/fontawesome-webfont.ttf
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/fontawesome-webfont.woff
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.eot
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.svg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.ttf
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.woff
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.woff2
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/bordered-pulled.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/core.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/fixed-width.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/font-awesome.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/icons.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/larger.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/list.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/mixins.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/path.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/rotated-flipped.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/spinning.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/stacked.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/less/variables.less
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_bordered-pulled.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_core.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_fixed-width.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_icons.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_larger.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_list.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_mixins.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_path.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_rotated-flipped.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_spinning.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_stacked.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_variables.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/font-awesome.scss
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/1.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/Sorting icons.psd
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/american-express.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/back_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/back_enabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/back_enabled_hover.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/alpha-horizontal.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/alpha.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/hue-horizontal.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/hue.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/saturation.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/favicon.ico
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/forward_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/forward_enabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/forward_enabled_hover.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/giphy_loading.gif
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/icons.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/img.jpg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/mastercard.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/paypal2.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/picture.jpg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/plugins/arcsight_logo.jpg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/plugins/elasticsearch_logo.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/plugins/mcafee_logo.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/plugins/qradar_logo.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/plugins/servicenow_logo.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/prod3.jpg
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/sort_asc.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/sort_asc_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/sort_both.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/sort_desc.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/sort_desc_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/sprite-skin-flat.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/sprite-skin-modern.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/sprite-skin-nice.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/sprite-skin-simple.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/user.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/images/visa.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/Chart.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/bootstrap.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/bootstrap/bootstrap.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/bootstrap/bootstrap.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/bootstrap/npm.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/c3/c3.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/c3/c3.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/chartjs/chart.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/custom.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/d3/API.md
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/d3/CHANGES.md
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/d3/LICENSE
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/d3/README.md
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/d3/d3.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/d3/d3.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/d3/d3v3.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/Sorting icons.psd
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/back_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/back_enabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/back_enabled_hover.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/favicon.ico
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/forward_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/forward_enabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/forward_enabled_hover.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_asc.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_asc_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_both.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_desc.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_desc_disabled.png
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/js/jquery.dataTables.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/datatables/js/jquery.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/fastclick.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/jquery.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/jquery.sparkline.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/moment.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/moment.min2.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/nprogress.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/pace-theme-center-radar.css
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/pace.min.js
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/js/sparkline.jquery.json
+	new file:   gentelella/core/templates/ir_playbook_1_files/static/less/custom.css
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ServiceNow/admin.py
+	modified:   ServiceNow/models.py
+	modified:   ServiceNow/snow.py
+	modified:   ServiceNow/views.py
+	modified:   gentelella/core/models.py
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/css/base.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/css/changelists.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/css/dashboard.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/css/fonts.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/css/forms.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/css/login.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/css/rtl.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/css/widgets.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/LICENSE.txt
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/README.txt
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/Roboto-Bold-webfont.woff
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/Roboto-Light-webfont.woff
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/fonts/Roboto-Regular-webfont.woff
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/LICENSE
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/README.txt
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/calendar-icons.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/gis/move_vertex_off.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/gis/move_vertex_on.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-addlink.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-alert.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-calendar.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-changelink.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-clock.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-deletelink.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-no.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-unknown-alt.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-unknown.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/icon-yes.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/inline-delete.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/search.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/selector-icons.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/sorting-icons.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/tooltag-add.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/img/tooltag-arrowright.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/SelectBox.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/SelectFilter2.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/actions.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/actions.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/admin/DateTimeShortcuts.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/admin/RelatedObjectLookups.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/calendar.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/collapse.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/collapse.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/core.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/inlines.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/inlines.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/jquery.init.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/prepopulate.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/prepopulate.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/timeparse.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/urlify.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/jquery/jquery.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/jquery/jquery.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/admin/js/vendor/xregexp/xregexp.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/animate.min.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap.min.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap-theme.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap-theme.css.map
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap-theme.min.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap-theme.min.css.map
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap.css.map
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap.min.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/bootstrap/bootstrap.min.css.map
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/c3/c3.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/custom.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/demo_page.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/demo_table.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/demo_table_jui.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/jquery.dataTables.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/css/jquery.dataTables_themeroller.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/Sorting icons.psd
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/back_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/back_enabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/back_enabled_hover.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/favicon.ico
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/forward_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/forward_enabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/forward_enabled_hover.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_asc.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_asc_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_both.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_desc.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/images/sort_desc_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/datatables/tools/css/dataTables.tableTools.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/floatexamples.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/css/nprogress.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/django_extensions/css/jquery.autocomplete.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/django_extensions/img/indicator.gif
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/django_extensions/js/jquery.ajaxQueue.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/django_extensions/js/jquery.autocomplete.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/django_extensions/js/jquery.bgiframe.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/djng/css/bootstrap3.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/djng/css/styles.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/djng/js/django-angular.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/djng/js/django-angular.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/css/font-awesome.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/css/font-awesome.min.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/FontAwesome.otf
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/fontawesome-webfont.eot
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/fontawesome-webfont.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/fontawesome-webfont.ttf
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/fonts/fontawesome-webfont.woff
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.eot
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.svg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.ttf
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.woff
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/glyphicons-halflings-regular.woff2
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/bordered-pulled.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/core.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/fixed-width.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/font-awesome.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/icons.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/larger.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/list.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/mixins.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/path.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/rotated-flipped.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/spinning.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/stacked.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/less/variables.less
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_bordered-pulled.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_core.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_fixed-width.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_icons.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_larger.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_list.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_mixins.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_path.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_rotated-flipped.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_spinning.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_stacked.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/_variables.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/fonts/scss/font-awesome.scss
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/1.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/Sorting icons.psd
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/american-express.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/back_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/back_enabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/back_enabled_hover.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/alpha-horizontal.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/alpha.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/hue-horizontal.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/hue.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/bootstrap-colorpicker/saturation.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/favicon.ico
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/forward_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/forward_enabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/forward_enabled_hover.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/giphy_loading.gif
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/icons.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/img.jpg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/mastercard.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/paypal2.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/picture.jpg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/plugins/arcsight_logo.jpg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/plugins/elasticsearch_logo.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/plugins/mcafee_logo.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/plugins/qradar_logo.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/plugins/servicenow_logo.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/prod3.jpg
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/sort_asc.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/sort_asc_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/sort_both.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/sort_desc.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/sort_desc_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/sprite-skin-flat.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/sprite-skin-modern.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/sprite-skin-nice.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/sprite-skin-simple.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/user.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/images/visa.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/Chart.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/bootstrap.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/bootstrap/bootstrap.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/bootstrap/bootstrap.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/bootstrap/npm.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/c3/c3.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/c3/c3.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/chartjs/chart.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/custom.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/d3/API.md
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/d3/CHANGES.md
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/d3/LICENSE
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/d3/README.md
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/d3/d3.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/d3/d3.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/d3/d3v3.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/Sorting icons.psd
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/back_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/back_enabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/back_enabled_hover.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/favicon.ico
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/forward_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/forward_enabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/forward_enabled_hover.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_asc.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_asc_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_both.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_desc.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/images/sort_desc_disabled.png
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/js/jquery.dataTables.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/datatables/js/jquery.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/fastclick.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/jquery.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/jquery.sparkline.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/moment.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/moment.min2.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/nprogress.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/pace-theme-center-radar.css
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/pace.min.js
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/js/sparkline.jquery.json
+	deleted:    gentelella/core/templates/ir_playbook_1_files/static/less/custom.css
+	modified:   gentelella/core/templates/qradar.html
+	modified:   qradar/templates/qradar_aql.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	ServiceNow/migrations/0001_initial.py
+	a.txt
+	config/
+	temp/
+
