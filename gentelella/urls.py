@@ -1,4 +1,4 @@
-"""gentelella URL Configuration
+""" URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^qradar/', include('qradar.urls')),
     url(r'^mcafee/', include('mcafee.urls')),
     url(r'^aws/', include('aws.urls')),
+    url(r'^soc_elastic/', include('soc_elastic.urls')),
     #url(r'^$', TemplateView.as_view(template_name="c3_dashboard.html")),
     #url(r'^$', TemplateView.as_view(template_name="c3_dashboard.html")),
     url(r'^c3_dashboard', c3_dashboard),
