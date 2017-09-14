@@ -7,8 +7,7 @@
         <div class="col-md-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2 >AWS Instance ACL</h2>
-                    <div id="error_section"></div>
+                    <h2>SIEM alerts</h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -33,20 +32,16 @@
         function f2() {
 
             $.ajax({
-                url: '/aws/insecure_instance_acl_json',
+                url: '/soc_elastic',
                 success: function (result) {
-                    var outcome = result.outcome;
-                    var error = result.error;
-                    if (outcome == "error"){
-                        $('#error_section').innerText = error;
-                        alert(error);
-                    }
-                    var data = result.success;
+                    var data = result;
+
+                    console.log(data);
                     $('#table_instance_acl').DataTable({
                         data: data,
                         columns: [
                             {
-                                title: "ID", data: "instance_id",
+                                title: "SIEM ID", data: "_source.id",
                                 "render": function (data, type, row, meta) {
                                     if (type === 'display') {
                                         data = '<a href=/aws/get_instance_acl/' + data + '>' + data + '</a>';
@@ -55,10 +50,13 @@
                                     return data;
                                 }
                             },
-                            {title: "Instance", data: "instance_name"},
+                            {title: "Alert description", data: "_source.description"},
 
-                            {title: "Security Group", data: "security_group_name"},
-                            {title: "Insecure", data: "insecure"},
+                            {title: "Status", data: "_source.status"},
+                            {title: "Severity", data: "_source.severity"},
+                            {title: "Customer ID", data: "_source.domain_id"},
+                            {title: "Category", data: "_source.categories"},
+
                             //{ title: "ACL-Insecure?", data: "acl_list", render: "[,].insecure"},
                             //{ title: "ACL-ToPort", data: "acl_list", render: "[, ].toport"},
                             //{ title: "ACL-IP_Range", data: "acl_list", render: "[0].iprange"},

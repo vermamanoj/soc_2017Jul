@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'qradar',
     'mcafee',
     'aws',
+    'soc_elastic',
 ]
 
 MIDDLEWARE_CLASSES = [

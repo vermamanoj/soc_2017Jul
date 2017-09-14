@@ -84,61 +84,71 @@ def insecure_instance_acl_json(request):
             "outcome": "error",
             "error": "configuration does not exist",
         }
-    ec2 = boto3.resource('ec2',
-                         aws_access_key_id=conf['success']['akey'],
-                         aws_secret_access_key=conf['success']['skey'],
-                         # region=conf['success']['region'],
-                         )
+    try:
+        ec2 = boto3.resource('ec2',
+                             aws_access_key_id=conf['success']['akey'],
+                             aws_secret_access_key=conf['success']['skey'],
+                             # region=conf['success']['region'],
+                             )
 
-    ec2_list = []
+        ec2_list = []
 
-    for i in ec2.instances.all():
-        # i = ec2.Instance('i-0ab3170d8d452bb8c')
-        # if True:
-        unsecure_instance = "False"
-        instance_dict = {}
+        for i in ec2.instances.all():
+            # i = ec2.Instance('i-0ab3170d8d452bb8c')
+            # if True:
+            unsecure_instance = "False"
+            instance_dict = {}
 
-        if i.state['Name'] == 'running':
+            if i.state['Name'] == 'running':
 
-            instance_name = i.tags[0]['Value']
-            instance_dict['instance_name'] = instance_name
-            instance_dict['instance_id'] = i.instance_id
-            for security_group in i.security_groups:
+                instance_name = i.tags[0]['Value']
+                instance_dict['instance_name'] = instance_name
+                instance_dict['instance_id'] = i.instance_id
+                for security_group in i.security_groups:
 
-                group_id = security_group['GroupId']
-                sg = ec2.SecurityGroup(group_id)
-                instance_dict['security_group_name'] = sg.group_name
-                instance_dict['security_group_description'] = sg.description
+                    group_id = security_group['GroupId']
+                    sg = ec2.SecurityGroup(group_id)
+                    instance_dict['security_group_name'] = sg.group_name
+                    instance_dict['security_group_description'] = sg.description
 
-                acl_list = []
+                    acl_list = []
 
-                for acl in sg.ip_permissions:
-                    acl_dict = {}
-                    acl_dict['insecure'] = "False"
+                    for acl in sg.ip_permissions:
+                        acl_dict = {}
+                        acl_dict['insecure'] = "False"
 
-                    if acl['IpProtocol'] == '-1':
-                        acl_dict['toport'] = "All traffic"
-                    else:
-                        acl_dict['toport'] = acl['ToPort']
+                        if acl['IpProtocol'] == '-1':
+                            acl_dict['toport'] = "All traffic"
+                        else:
+                            acl_dict['toport'] = acl['ToPort']
+                        print(acl)
+                        for iprange in acl['IpRanges']:
+                            acl_dict['iprange'] = iprange['CidrIp']
+                            if iprange['CidrIp'] == '0.0.0.0/0':
+                                acl_dict['insecure'] = "True"
+                                instance_dict['insecure'] = "True"
 
-                    acl_dict['iprange'] = acl['IpRanges'][0]['CidrIp']
 
-                    if acl['IpRanges'][0]['CidrIp'] == '0.0.0.0/0':
-                        acl_dict['insecure'] = "True"
-                        instance_dict['insecure'] = "True"
+                        acl_list.append(acl_dict)
 
-                    acl_list.append(acl_dict)
+                    instance_dict['acl_list'] = acl_list
+                ec2_list.append(instance_dict)
 
-                instance_dict['acl_list'] = acl_list
-            ec2_list.append(instance_dict)
-
-    for x in ec2_list:
-        print(x)
-    result = {
-        "outcome": "success",
-        "success": ec2_list
-    }
-    return JsonResponse(result, safe=False)
+        for x in ec2_list:
+            print(x)
+        result = {
+            "outcome": "success",
+            "success": ec2_list
+        }
+        return JsonResponse(result, safe=False)
+    except Exception as e:
+        logger.error(e)
+        raise
+        error = {
+            "outcome": "error",
+            "error": "server internal error",
+        }
+        return JsonResponse(error)
 
 
 def config(request):
@@ -202,12 +212,12 @@ def get_instance_acl_json(request, instance_id=None):
                         acl_dict['toport'] = "All traffic"
                     else:
                         acl_dict['toport'] = acl['ToPort']
+                    if len(acl['IpRanges']) > 0:
+                        acl_dict['iprange'] = acl['IpRanges'][0]['CidrIp']
 
-                    acl_dict['iprange'] = acl['IpRanges'][0]['CidrIp']
-
-                    if acl['IpRanges'][0]['CidrIp'] == '0.0.0.0/0':
-                        acl_dict['insecure'] = "True"
-                        instance_dict['insecure'] = "True"
+                        if acl['IpRanges'][0]['CidrIp'] == '0.0.0.0/0':
+                            acl_dict['insecure'] = "True"
+                            instance_dict['insecure'] = "True"
 
                     acl_list.append(acl_dict)
 
@@ -297,7 +307,7 @@ def aws_send_email(request):
         )
     # Display an error if something goes wrong.
     except Exception as e:
-        print("Error: ", e)
+        logger.error("Error: ", e)
     else:
         print(response)
     result = {
