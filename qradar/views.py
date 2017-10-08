@@ -297,7 +297,7 @@ def show_alerts(request):
     :param request:
     :return:
     '''
-    return render(request,"qradar_offense.html")
+    return render(request,"qradar/qradar_offense.html")
 
 def xf_dns(request):
     '''

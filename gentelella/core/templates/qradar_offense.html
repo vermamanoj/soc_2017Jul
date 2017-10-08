@@ -1,171 +1,45 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block main_content %}
-
-    <h2></h2>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="x_panel">
-                <div class="x_title">
-                    <h2 >SIEM Offenses</h2>
-                    <div id="error_section"></div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                    <div class="row">
-                        <div id="loading">Loading data, please wait...
-                            <img height=80 width=80 src="{% static 'images/loading.gif' %} "></img>
-                        </div>
-
-                        <table id="siem_offesnes" class="display" width="100%"></table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+{{ qradar_offense }}
+{{ data1 }}
+    <hr>
+    {% if data == "Connection failed" %}
+            <h1> Could not connect to QRadar server, please check connection</h1>
+    {% else %}
 
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-          href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+        <h2>QRadar Offense list</h2>
+        <table id="example" class="table table-responsive table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Magnitude</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+        {% for d in data %}
+            <tr>
+                <td> <a  href="/qo/{{ d.id }}"  >{{ d.id }}</a></td>
+                <td> {{ d.description }}</td>
+                <td> {{ d.magnitude }}</td>
+                <td> {{ d.status }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        {% endif %}
+</div>
 
+<script>$('#example').ready(function() {
+    $('#example').DataTable();
+    console.log('abcd');
+    console.log($('#example'));
+} );</script>
 <script>
-    // this function shows the data table
-    // input: data from ElasticSearch response['hits']['hits']
-    function show_data_table() {
-        $.ajax({
-            url: '/qradar/get_es_offenses',
-            success: function (result) {
-
-                var outcome = result.outcome;
-                var error = result.error;
-
-                if (outcome == "error"){
-                    $('#error_section').innerText = error;
-                    alert(error);
-                    }
-
-                var data = result.success;
-                var dt = $('#siem_offesnes').DataTable({
-                    "processing": true,
-                    data: data,
-                    columns: [
-                        //this column shows plus/minus sign to show more details of alert
-                        {  "class":          "details-control",
-                            "orderable":      false,
-                            "data":           null,
-                            "defaultContent": ""
-                        },
-                        //this column displays alert ID and hyperlink to open alert details page
-                        {title: "ID", data: "_source.id",
-                            "render": function (id, type, row, meta) {
-                                if (type === 'display') {
-                                    url = '<a href=/qradar/get_es_offenses/' + id + '>' + id + '</a>';
-                                }
-                                return url;
-                            }
-                        },
-                        {title: "Description", data: "_source.description"},
-                        {title: "Severity", data: "_source.severity"},
-                        {title: "Offense Source", data: "_source.offense_source"},
-                        {title: "Categories", data: "_source.categories", render: "[,]"},
-                        {title: "Customer", data: "_source.domain_id"},
-                        {title: "Event Count", data: "_source.event_count"},
-                    ],
-                // Set row/cell color based on severity
-                // Use $(row).css to set color for complete row
-                    "rowCallback": function( row, data, index ) {
-                        if ( data['_source']['severity'] > 4 ) {
-                          $(row).find('td:eq(3)').css('color', 'brown');
-                          $(row).find('td:eq(0)').css('background-color', 'brown');
-                        }
-                        else if ( data['_source']['severity'] > 3 ) {
-                          $(row).find('td:eq(3)').css('color', 'blue');
-                        }
-                      },
-                    {% comment %}
-                    // another way to do same thing, this example uses old function fnRowCallBack and "switch"
-                    "fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
-                        switch(aData['_source']['severity']){
-                            case 5:
-                                $(nRow).find('td:eq(3)').css('color', 'red');
-                                $(nRow).find('td:eq(0)').css('background-color', 'red');
-                                //$(nRow).css('color', 'red')
-                                break;
-                            case 4:
-                                $(nRow).css('bgcolor', 'green')
-                                break;
-                            case 4:
-                                $(nRow).css('color', 'blue')
-                                break;
-                        }
-                    },
-                    {% endcomment %}
-    });
-
-    // hide the loading.. image when data is available
-        $("#loading").hide();
-
-    // this function formats the data to be shown below each row when clicked on plus sign
-    // input: data from ElasticSearch response['hits']['hits']
-        function format ( d ) {
-            data = ""
-            for (x in d._source){
-                data = data + x +" : "+ d._source[x] + "<BR>";
-            }
-        return data
-        }
-    // new temp code
-            var detailRows = [];
-            $('#siem_offesnes tbody').on('click', 'tr td.details-control', function () {
-                var tr = $(this).closest('tr');
-                var row = dt.row( tr );
-                var idx = $.inArray( tr.attr('id'), detailRows );
-
-                if ( row.child.isShown() ) {
-                    tr.removeClass( 'details' );
-                    row.child.hide();
-
-                    // Remove from the 'open' array
-                    detailRows.splice( idx, 1 );
-                }
-                else {
-                    tr.addClass( 'details' );
-                    console.log(row.data());
-                    row.child( format( row.data() ) ).show();
-
-                    // Add to the 'open' array
-                    if ( idx === -1 ) {
-                        detailRows.push( tr.attr('id') );
-                    }
-                }
-            } );
-
-        // On each draw, loop over the `detailRows` array and show any child rows
-            dt.on( 'draw', function () {
-                $.each( detailRows, function ( i, id ) {
-                    $('#'+id+' td.details-control').trigger( 'click' );
-                } );
-            } );
-
-        }
-        });
-    }
-    window.onload = show_data_table;
+    function offense_details(off_id) {
+        alert(off_id);
+        var a = {{ data }}
+        #document.getElementById("qradar_offenses").innerHTML = a;
+    };
 </script>
 
-<style>
-{#this style sheet is used by the DataTable to show plus minus sign images#}
-td.details-control {
-    background: url("{% static 'qradar/images/plus.png' %}") no-repeat center center;
-    cursor: pointer;
-}
-tr.details td.details-control {
-    background: url("{% static '/qradar/images/minus.png' %}") no-repeat center center;
-    cursor: pointer;
-}
-</style>
-
-
-{% endblock main_content %}
+<link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
