@@ -19,7 +19,9 @@ from .views import *
 urlpatterns = [
     url(r'^$', servicenow),
     url(r'(\w+)/(\w+)$', servicenow),
-
+    url(r'^cu/(\w+)/$', snow_landder),
+    url(r'^createinc/$', submitinc),
+    url(r'^updater/$', updater)
 
 
 ]

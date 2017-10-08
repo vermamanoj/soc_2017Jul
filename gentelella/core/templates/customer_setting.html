@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+    <div class="row">
+      <div class="col-md-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>CSFC Customer Management</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="row">
+
+              <div class="col-md-3 col-xs-12 widget widget_tally_box">
+                   <a href="/customer_onboarding">
+                  <div class="caption">
+                    <p>CSFC Customer On-Boarding</p>
+                  </div>
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="{% static "images/cust_settings/on-boarding.jpg" %}" alt="image">
+                  </div>
+                  <div class="caption">
+                    <p>Add New Customer To CSFC Services</p>
+                  </div>
+                </div></a>
+              </div>
+
+                <div class="col-md-3 col-xs-12 widget widget_tally_box">
+                    <a href="/aws/config">
+                        <div class="caption">
+                            <p>CSFC Customer Off-Boarding</p>
+                        </div>
+                        <div class="thumbnail">
+                            <div class="image view view-first">
+                                <img style="width: 100%; display: block;"
+                                     src="{% static "images/cust_settings/off-boarding.jpg" %}" alt="image">
+                            </div>
+                            <div class="caption">
+                                <p>Remove Existing Customer From CSFC Services</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-12 widget widget_tally_box">
+                    <a href="/aws/config">
+                        <div class="caption">
+                            <p>CSFC Existing Customers</p>
+                        </div>
+                        <div class="thumbnail">
+                            <div class="image view view-first">
+                                <img style="width: 100%; display: block;"
+                                     src="{% static "images/cust_settings/customers.jpg" %}" alt="image">
+                            </div>
+                            <div class="caption">
+                                <p>View On-Boarded CSFC Customers&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+{% endblock %}

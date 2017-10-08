@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+
+
+        <script src="static/js/jquery.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
+        <![endif]-->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+                <!-- page content -->
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Create Incident</h2>
+				<div class="clearfix"></div>
+			</div>
+		<div>
+		<form class="form-inline" action="/servicenow/createinc/" method="post">
+        {% csrf_token %}
+			<div class="x_content col-md-12 col-sm-12 col-xs-12">
+				<div class="row" style="margin-bottom:10px;">
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Caller Id&nbsp;</label>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-12 form-group has-feedback">
+						<input type="text" class="form-control" value="SOCAPI" name="caller_id" placeholder="SOCAPI" disabled="disabled">
+					</div>
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Contact Type&nbsp;</label>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-12 form-group has-feedback">
+						<input type="text" class="form-control" name="contact_type" placeholder="API" disabled="disabled">
+					</div>
+				</div>
+
+				<div class="row" style="margin-bottom:10px;">
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Category&nbsp;</label>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-12 form-group has-feedback">
+						<select class="form-control" style="width: 227px;" name="category" title="category">
+							<option value="none">Select One</option>
+                                {% for x in data.category.category %}
+									<option value="{{ x }}">{{ x }}</option>
+                                {% endfor %}
+						</select>
+					</div>
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Assignment Group Id&nbsp;</label>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-12 form-group has-feedback">
+						<select class="form-control" style="width: 227px;" name="assign_gup">
+                            <option value="none">Select One</option>
+                                {% for x in data.assignment.ass_gup %}
+									<option value="{{ x }}">{{ x }}</option>
+                                {% endfor %}
+						</select>
+					</div>
+				</div>
+
+				<div class="row" style="margin-bottom:10px;">
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Sub Category</label>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-12 form-group has-feedback">
+						<select class="form-control" style="width: 227px;" name="sub_category">
+							<option value="none">Select One</option>
+                                {% for x in data.sub_category.sub_category %}
+									<option value="{{ x }}">{{ x }}</option>
+                                {% endfor %}
+						</select>
+					</div>
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Impact</label>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-12 form-group has-feedback">
+						<select class="form-control" style="width: 227px;" name="impact">
+							<option value="1">1 - High</option>
+                            <option value="2" selected="selected">2 - Medium</option>
+							<option value="3">3 - Low</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row" style="margin-bottom:10px;">
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">State</label>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-12 form-group has-feedback">
+						<select class="form-control" style="width: 227px;" name="state">
+							<option value="1">New</option>
+                            <option value="2" disabled="disabled">In-Progress</option>
+							<option value="3" disabled="disabled">Hold</option>
+							<option value="4" disabled="disabled">Resolved</option>
+							<option value="5" disabled="disabled">Closed</option>
+							<option value="6" disabled="disabled">Cancel</option>
+						</select>
+					</div>
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Urgency</label>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-12 form-group has-feedback">
+						<select class="form-control" style="width: 227px;" name="urgency">
+							<option value="1">1 - High</option>
+                            <option value="2" selected="selected">2 - Medium</option>
+							<option value="3">3 - Low</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row" style="margin-bottom:10px;">
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Short Description</label>
+					</div>
+					<div class="col-md-9 col-sm-8 col-xs-12 form-group has-feedback">
+						<input type="text" class="form-control" style="width:99%" name="short_dis">
+					</div>
+				</div>
+
+				<div class="row" style="margin-bottom:20px;">
+					<div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label"> Description</label>
+					</div>
+					<div class="col-md-9 col-sm-8 col-xs-12 form-group has-feedback">
+						<textarea class="form-control" rows="9" id="comment" style="width:99%;" name="dis"></textarea>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1 col-sm-8 col-xs-12 form-group has-feedback col-md-offset-5">
+						<button type="submit" class="btn btn-primary"><b>Create Incident</b></button>
+					</div>
+				</div>
+			</div>
+
+			</div>
+        <input type="hidden" value="{{ data.cid }}" name="cid">
+		</form>
+
+	</div>
+
+        <!-- /editor -->
+{% endblock %}

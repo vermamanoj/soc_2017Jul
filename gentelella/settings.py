@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'mcafee',
     'aws',
     'soc_elastic',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -82,9 +83,24 @@ WSGI_APPLICATION = 'gentelella.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+     #   'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #},
+    #'soc_database': {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        #'ENGINE': 'django.db.backends.mysql',
+        #'ENGINE': 'mysql.connector.django',
+        'USER' : 'socdb_admin',
+        'PASSWORD' : 'India@123',
+        'HOST' : '172.16.0.81',
+        'PORT' : '5432',
+        'NAME' : 'soc_database',
+        #default-character-set = utf8
+        #'OPTIONS': {
+         #   'read_default_file': 'db.cnf',
+        #}
     }
 }
 

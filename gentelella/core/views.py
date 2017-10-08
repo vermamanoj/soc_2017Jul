@@ -1,17 +1,32 @@
 import json
 import os
-
 from bokeh.embed import components
 from bokeh.models import HoverTool
 from bokeh.plotting import figure
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
-
 from . import qradar_auth
+from django import forms
+from django.utils import timezone
+from gentelella.core.forms import CustomerInfoForm
 
 
-@login_required(login_url='/login/')
+#@login_required(login_url='/login/')
+
+def customerinfo(request):
+    if request.method == "POST":
+        form = CustomerInfoForm(request.POST)
+        if form.is_valid():
+            model_instance = form.save(commit=False)
+            model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return redirect('/')
+
+    else:
+
+        form = CustomerInfoForm()
+        return render(request, "customer_onboard.html", {'form': form})
 
 def index(request):
     print(request)
@@ -61,7 +76,7 @@ def qradar_connect(request):
                 if 'qradar' in qradar_config.keys():
                     d1 = qradar_config['qradar']
                     qradar_config_exists = 1
-                    return render(request, 'qradar_connector.html', {"data": d1})
+                    return render(request, 'qradar/qradar_connector.html', {"data": d1})
     if qradar_config_exists==0:
         if request.POST:
             qradar_config = {"qradar":{
@@ -73,7 +88,7 @@ def qradar_connect(request):
             with open(r'./config/config.ini', 'w') as f:
                 f.write(json.dumps(qradar_config,indent=4))
             return redirect('/qradar_connect')
-        return render(request, 'qradar_connector.html')
+        return render(request, 'qradar/qradar_connector.html')
 
 
 
@@ -140,3 +155,19 @@ def bokeh_json(request):
         }
     }
     return JsonResponse(result)
+
+def customer_setting(request):
+    response = ''
+    return render(request, 'customer_setting.html')
+
+# Cookie test
+def cookies_test(request):
+    print(request.session.get('has_commented'))
+    #if request.session.get('has_commented', False):
+    #   return HttpResponse("You've already commented.")
+
+    request.session['has_commented'] = True
+    print(request.session.get('value'))
+    request.session['value'] = request.session.get('value',98765432100)/10
+
+    return JsonResponse({"data":request.session['value']})

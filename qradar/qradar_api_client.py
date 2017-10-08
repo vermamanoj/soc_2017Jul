@@ -26,6 +26,7 @@ logging.basicConfig(format=FORMAT)
 logger.setLevel(logging.INFO)
 
 
+
 def q_apiclient(endpoint, query='', id=''):
     '''
     host = "54.236.49.133"
@@ -140,3 +141,4 @@ def q_get_searches_result(search_id):
     }
     logger.info(result)
     return result
+

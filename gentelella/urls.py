@@ -45,5 +45,9 @@ urlpatterns = [
     url(r'^servicenow/', include('ServiceNow.urls')),
     url(r'^bokeh/$', bokeh),
     url(r'^bokeh_json/$', bokeh_json),
+    url(r'^customer_setting/$', customer_setting),
+    url(r'^customer_onboarding/$', customerinfo),
+    # Test section
+    url(r'^cookies_test/$', cookies_test),
 ]
 

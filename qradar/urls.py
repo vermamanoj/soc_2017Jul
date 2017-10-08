@@ -23,4 +23,13 @@ urlpatterns = [
     url(r'^events_category/$', qradar_events_category),
     url(r'^userBySourceIP/$', qradar_userBySourceIP),
     url(r'^dashboard1/$', qradar_dashboard1),
+    url(r'^offenses/(\d+)/$', get_offenses),
+    url(r'^write_offenses_to_es/$', write_offenses_to_es),
+
+    url(r'^write_qradar_events_to_es/$', write_qradar_events_to_es),
+    #Test URLs
+    url(r'get_es_offenses/$', get_es_offenses),
+    url(r'get_es_offenses/(\d+)$', get_es_offenses),
+    url(r'^show_alerts/$', show_alerts),
+    url(r'^xf_dns/$', xf_dns),
 ]

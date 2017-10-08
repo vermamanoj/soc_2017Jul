@@ -25,6 +25,30 @@
 
         </table>
 
+    <form class="form-inline" action="/servicenow/createinc/" method="post">
+        {% csrf_token %}
+			<div class="x_content col-md-12 col-sm-12 col-xs-12">
+				<div class="row" style="margin-bottom:10px;">
+
+                    <div class="col-md-3 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Threat&nbsp;</label>
+                        <input type="text" class="form-control" style="width:99%" name="short_dis">
+					</div>
+
+
+                    <div class="col-md-2 col-sm-8 col-xs-12 form-group has-feedback">
+						<label class="control-label">Whois&nbsp;</label>
+                        <input type="radio" class="form-control" style="width:99%" name="short_dis">
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-8 col-xs-12 form-group has-feedback">
+                        <label class="control-label">Whois&nbsp;</label>
+						<input type="radio" class="form-control" style="width:99%" name="short_dis">
+                    </div>
+                </div>
+            </div>  </form>
+
 
 {{ data1 }}
 

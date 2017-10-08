@@ -34,7 +34,7 @@ def get_qradar_config():
                 config.read(r'./config/config.ini')
                 print(config)
                 if 'qradar' in config.sections():
-                    logger.warning("Qradar config exists..................")
+                    logger.info("Qradar config exists..................")
 
                     host = config['qradar']['host']
                     port = config['qradar']['port']

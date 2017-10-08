@@ -27,7 +27,6 @@
     <script src="{% static 'js/bootstrap.min.js' %} "></script>
     <script src="{% static 'js/custom.js' %} "></script>
 
-
     <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
         <![endif]-->
@@ -140,8 +139,12 @@
                         <div class="menu_section">
 
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-plug"></i> Plugins <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-plug"></i> Settings <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
+                                        <li><a href="/customer_setting">Customer</a>
+                                        </li>
+                                        <li><a href="/plugins">Users</a>
+                                        </li>
                                         <li><a href="/qradar/config">QRadar connector</a>
                                         </li>
                                         <li><a href="/plugins">Plug-in list</a>

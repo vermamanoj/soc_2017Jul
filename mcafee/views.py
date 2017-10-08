@@ -16,7 +16,7 @@ def mcafee_system_list(request):
     system_list = mcafee_connector.get_mcafee_data(command, parameter)
 
     # return render(request, 'mcafee_systems_list.html', {'success' :system_list})
-    return render(request, 'mcafee_systems_list.html', system_list)
+    return render(request, 'mcafee/mcafee_systems_list.html', system_list)
     # return JsonResponse(system_list)
 
 
@@ -70,12 +70,12 @@ def system_dat_json(request):
 
 
 def system_dat(request):
-    return render(request, 'mcafee_systems_dat.html')
+    return render(request, 'mcafee/mcafee_systems_dat.html')
 
 def mcafee_config(request):
     data = mcafee_connector.get_mcafee_config()
     if data['outcome'] == 'error':
-        return render(request, 'mcafee_connector.html', data)
+        return render(request, 'mcafee/mcafee_connector.html', data)
     else:
         result = {
                     "outcome":"success",

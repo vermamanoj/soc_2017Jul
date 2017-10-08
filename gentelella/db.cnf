@@ -1,0 +1,7 @@
+[client]
+user = socdb_user
+password = India@123
+host = 172.16.0.81
+port = 3306
+database = soc_database
+default-character-set = utf8

@@ -1,9 +1,12 @@
 import logging
 import re
-
+import json
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from . import snow
+from . import snow_creator
+from . import inc_state_updater
 
 logger = logging.getLogger('root')
 FORMAT = "[%(filename)s:%(lineno)s-%(funcName)s] %(message)s"
@@ -48,3 +51,25 @@ def servicenow(request, table="incident", *arg):
         }
         logger.info(result)
         return render(request, 'snow.html', context={'data': result, 'type': 'summary'})
+
+def snow_landder(request,cuid):
+    details = snow_creator.get_cust_details(cuid)
+    data = {
+        "cid" : details.uid,
+        "category" : details.category,
+        "sub_category": details.sub_category,
+        "assignment": details.assignment_group
+    }
+    return render(request, 'create_inc.html', context={'data':data})
+
+def submitinc(request):
+    if request.POST:
+        details=request.POST
+        outcome = snow_creator.create_inc(details)
+        #return HttpResponse(details['impact'])
+        return HttpResponse(outcome)
+
+def updater(request):
+    outcome = inc_state_updater.get_snow_cust()
+    #return HttpResponse(details['impact'])
+    return HttpResponse(outcome)
