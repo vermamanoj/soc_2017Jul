@@ -195,6 +195,14 @@ def write_offenses_to_es(requests):
         offense_data = get_offenses(requests)
         data = json.loads((offense_data.content.decode('utf-8')))
         for offense in data['success']:
+            # Add extra meta data to alerts
+            # offense['unique_id'] = 0
+            # offense['siem_id'] = 0 # SIEM ID to be calculated from customer
+            # offense['are_events_collected'] = False # changes to True after events are written to events index
+            # offense['assigned_to'] = "" # Updatable field
+            # offense['last_updated'] = 'time_format'
+            # offense['status'] = 0
+            # offense['incident_id'] = 0
             es_write_outcome = es.index(index='qradar_offenses', doc_type='qradar_offenses', body=offense)
             print(es_write_outcome)
         return JsonResponse(es_write_outcome)
@@ -288,16 +296,51 @@ def get_es_offenses(requests, id=None):
         }
         return JsonResponse(result, safe=False)
 
+def get_es_events(requests, id=None):
+    """
+    :param requests:
+    :return:
+    """
+    from elasticsearch import Elasticsearch
+    from elasticsearch_dsl import Search
+    try:
+        es = Elasticsearch([{'host': '172.16.0.29', 'port': 9200}])
+        # if id:
+        #     s = Search(using=es, index='qradar_events').query("match",qradar_offense_id=id)
+        # else:
+        #     s = Search(using=es, index='qradar_events').query("match_all")
+        # es_response = s.execute()
+
+        if id:
+            es_query = '{"size":100,"query":{ "match": {"qradar_offense_id":' + id + '}}}'
+            print(es_query)
+        else:
+            es_query = '{"query":{"match_all":{}}}'
+        es_response = es.search('qradar_events', body=es_query)
+        print(es_response)
+        result = {
+            "outcome": "success",
+            "success": es_response['hits']['hits']
+        }
+        return JsonResponse(result, safe=False)
+    except:
+        result = {
+            "outcome": "error",
+            "error": "Some error occurred"
+        }
+        return JsonResponse(result, safe=False)
 
 
-
-def show_alerts(request):
+def show_alerts(request, id=None):
     '''
     the template calls get_es_offenses url to get json data
     :param request:
     :return:
     '''
     return render(request,"qradar/qradar_offense.html")
+
+def show_alert_details(request, id):
+    return render(request, "qradar/qradar_offense_details.html", {"id":id})
 
 def xf_dns(request):
     '''

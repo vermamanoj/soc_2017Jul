@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from .views import *
+from django.views.generic import TemplateView
 
+app_name = 'qradar'
 urlpatterns = [
     url(r'^$', index),
     url(r'config', qradar_config),
@@ -30,6 +32,11 @@ urlpatterns = [
     #Test URLs
     url(r'get_es_offenses/$', get_es_offenses),
     url(r'get_es_offenses/(\d+)$', get_es_offenses),
-    url(r'^show_alerts/$', show_alerts),
+    url(r'get_es_events/$', get_es_events),
+    url(r'get_es_events/(\d+)$', get_es_events),
+    #url(r'^show_alerts/$', show_alerts),
+    url(r'^show_alerts/$', TemplateView.as_view(template_name="qradar/qradar_offense.html"), name="show_alerts"),
+    url(r'^show_alert_details/(\d+)/$', show_alert_details, name="show_alert_details"),
+    # url(r'^show_alert_details/(\d+)$', TemplateView.as_view(template_name="qradar/qradar_offense.html", ), name="show_alerts"),
     url(r'^xf_dns/$', xf_dns),
 ]

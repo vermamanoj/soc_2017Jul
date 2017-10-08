@@ -25,10 +25,9 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-          href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
 
 <script>
     // this function shows the data table
@@ -55,13 +54,14 @@
                         {  "class":          "details-control",
                             "orderable":      false,
                             "data":           null,
-                            "defaultContent": ""
+                            "defaultContent": "",
+                            "width": "5%",
                         },
                         //this column displays alert ID and hyperlink to open alert details page
                         {title: "ID", data: "_source.id",
                             "render": function (id, type, row, meta) {
                                 if (type === 'display') {
-                                    url = '<a href=/qradar/get_es_offenses/' + id + '>' + id + '</a>';
+                                    url = '<a href=/qradar/show_alert_details/' + id + '>' + id + '</a>';
                                 }
                                 return url;
                             }
