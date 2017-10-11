@@ -222,8 +222,13 @@
                             }
                         },{% endcomment %}
 
-                        {title: "Severity", data: "_source.severity", "width": "4%",},
-                        {title: "Source IP", data: "_source.sourceip", "width": "8%",},
+                        {title: "Severity", data: "_source.severity", "width": "4%", },
+                        {title: "Source IP", data: "_source.sourceip", "width": "8%", "render": function (data, type, row, meta) {
+                                if (type === 'display') {
+                                    url = '<a href=/qradar/xforce/ipr/' + data + ' target="_blank">' + data + '</a>';
+                                }
+                                return url;
+                            }},
                         {title: "Destination IP", data: "_source.destinationip", "width": "5%",},
                         {title: "Categories", data: "_source.categoryname_category", "width": "15%",},
                         {title: "Username", data: "_source.username", "width": "10%",},
@@ -319,7 +324,7 @@
         var customer_id = a[0].rows[1].cells[6].innerText;
         //var url = '/servicenow/cu/' +  customer_id +'/';
         var url = '/servicenow/cu/' +  "1" +'/';
-        window.open(url,'_blank');
+        window.open(url,'_blank', "toolbar=yes,scrollbars=yes,resizable=yes,top=50,left=50,width=600,height=600");
         console.log(url);
     }
 </script>

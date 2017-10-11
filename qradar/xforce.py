@@ -12,8 +12,6 @@ FORMAT = "[%(filename)s:%(lineno)s-%(funcName)s] %(message)s"
 logging.basicConfig(format=FORMAT)
 logger.setLevel(logging.INFO)
 
-
-
 class XForceClient:
 
     def __init__(self,):
@@ -55,7 +53,11 @@ class XForceClient:
         url = "https://api.xforce.ibmcloud.com/resolve/" + domain
         print(url)
         response = requests.get(url, auth=HTTPBasicAuth(self.key, self.password))
-
         return response.json()
 
+    def get_xforce(self, endpoint, data):
+        url = "https://api.xforce.ibmcloud.com/" + endpoint + "/" + data
+        print(url)
+        response = requests.get(url, auth=HTTPBasicAuth(self.key, self.password))
+        return response.json()
 

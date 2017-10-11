@@ -340,9 +340,10 @@ def show_alerts(request, id=None):
     return render(request,"qradar/qradar_offense.html")
 
 def show_alert_details(request, id):
-    return render(request, "qradar/qradar_offense_details.html", {"id":id})
+    data = {"id":id, }
+    return render(request, "qradar/qradar_offense_details.html", data)
 
-def xf_dns(request):
+def xf_dns(request, resource, value):
     '''
     the template calls get_es_offenses url to get json data
     :param request:
@@ -351,3 +352,20 @@ def xf_dns(request):
     xfc = XForceClient()
     dns_result = xfc.get_dns("www.google.com")
     return JsonResponse(dns_result, safe=False)
+
+def xf_getxforce(request, endpoint, data):
+    from json2html import Json2Html
+    jsonTable = Json2Html()
+    xfc = XForceClient()
+    data = xfc.get_xforce(endpoint, data)
+    jtable = jsonTable.convert(json = data, table_attributes="id=\"info-table\" class=\"table table-bordered table-hover\"")
+    #jtable = jtable.decode('utf-8')
+    print(jtable)
+    result = {
+        "outcome" : "success",
+        "success" : data,
+        "table" : jtable
+    }
+    #return JsonResponse(result, safe=False)
+    return render(request, "qradar/xforce.html", result)
+

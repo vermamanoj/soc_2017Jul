@@ -39,4 +39,5 @@ urlpatterns = [
     url(r'^show_alert_details/(\d+)/$', show_alert_details, name="show_alert_details"),
     # url(r'^show_alert_details/(\d+)$', TemplateView.as_view(template_name="qradar/qradar_offense.html", ), name="show_alerts"),
     url(r'^xf_dns/$', xf_dns),
+    url(r'^xforce/(\w+)/(.*)/$', xf_getxforce),
 ]
